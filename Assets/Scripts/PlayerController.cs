@@ -19,7 +19,7 @@ public class PlayerController : Actor {
     }
 
     void Start() {
-        PlayerClass startingClass = gameObject.AddComponent<PlayerClassChef>();
+        PlayerClass startingClass = gameObject.AddComponent<PlayerClassFisherman>();
         SwapClass(startingClass);
 
         BaseColor = Color.white;

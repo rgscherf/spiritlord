@@ -8,20 +8,20 @@ public class PlayerClassChef: PlayerClass {
     // secondary fire: wind-up a drumstick, which will attract enemies where it lands.
     // tertiary fire: slide out a cauldron of stew, which will explode and push away enemies after a delay.
 
-    Color color;
-    Sprite _chefSprite;
+    Color _baseColor;
+    Sprite _baseSprite;
 
     public GameObject primaryProjectile;
     public GameObject secondaryProjectile;
     public GameObject tertiaryProjectile;
 
     const float primaryThrowVelocity = 450f;
-    const float secondaryDeathTimer = 3.5f;
+    const float secondaryDeathTimer = 2.5f;
     const float secondaryThrowVelocity = 200f;
 
     public override float PlayerSpeed { get { return 1200f; } }
-    public override Sprite ClassSprite {get { return _chefSprite; }}
-    public override Color ClassColor {get { return color; }}
+    public override Sprite ClassSprite {get { return _baseSprite; }}
+    public override Color ClassColor {get { return _baseColor; }}
     public override void CallBaseStart() { BaseStart(); }
     public override void CallBaseUpdate() { BaseUpdate(); }
 
@@ -31,9 +31,9 @@ public class PlayerClassChef: PlayerClass {
 
     void Awake() {
         var entities = GameObject.Find("GameController").GetComponent<Entities>();
-        _chefSprite = entities.chefSprite;
+        _baseSprite = entities.chefSprite;
 
-        color = ClassColors.chefColor;
+        _baseColor = ClassColors.chefColor;
 
         primaryProjectile = entities.chefFirePrimary;
         secondaryProjectile = entities.chefFireSecondary;
@@ -57,7 +57,7 @@ public class PlayerClassChef: PlayerClass {
             var p = MakeProjectile(primaryProjectile);
             ChangeSpriteColor(p);
             p.GetComponent<Rigidbody2D>().AddForce(transform.up * primaryThrowVelocity);
-            p.GetComponent<Rigidbody2D>().AddTorque(20 * (Random.value > 0.5f ? 1f : -1f));
+            p.GetComponent<Rigidbody2D>().AddTorque(10 * (Random.value > 0.5f ? 1f : -1f));
             primaryCooldown.Reset();
         }
     }
@@ -83,7 +83,7 @@ public class PlayerClassChef: PlayerClass {
     }
 
     void ChangeSpriteColor(GameObject go) {
-        go.GetComponent<SpriteRenderer>().color = color;
+        go.GetComponent<SpriteRenderer>().color = _baseColor;
     }
 
 }

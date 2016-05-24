@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"CallBase",
+				"CallBaseStart	(PlayerClass.cs)"
+			],
+			[
+				"Base",
+				"BaseUpdate	(PlayerClassChef.cs)"
+			],
+			[
+				"entities",
+				"entities.chefSprite"
+			],
+			[
+				"Call",
+				"CallBaseUpdate	(PlayerClass.cs)"
+			],
+			[
+				"CallB",
+				"CallBaseStart	(PlayerClass.cs)"
+			],
+			[
+				"primaryCoo",
+				"primaryCooldownAmt"
+			],
+			[
 				"tick",
 				"TickCheck(float dt)	bool"
 			],
@@ -329,12 +353,12 @@
 				"OmniSharpSublime: Override Targets"
 			],
 			[
-				"overrid",
-				"OmniSharpSublime: Override Targets"
-			],
-			[
 				"color",
 				"Color Picker"
+			],
+			[
+				"overrid",
+				"OmniSharpSublime: Override Targets"
 			],
 			[
 				"ov",
@@ -389,12 +413,14 @@
 	},
 	"file_history":
 	[
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Timer.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerController.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Actor.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassFisherman.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerController.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Timer.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChef.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClass.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/ClassColors.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Enemy Scripts/EnemyBasicController.cs",
 		"/Users/rgscherf/Library/Application Support/Sublime Text 3/Packages/User/SublimeAStyleFormatter.sublime-settings",
@@ -454,6 +480,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"CallBaseAwake",
 			"Debug",
 			"UpdateFlicker",
 			"ob",
@@ -537,12 +564,19 @@
 				0,
 				2,
 				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.33,
+			0.66,
 			1.0
 		],
 		"rows":
@@ -581,6 +615,42 @@
 		"selected_items":
 		[
 			[
+				"fisherman",
+				"Assets/Scripts/Class Scripts/PlayerClassFisherman.cs"
+			],
+			[
+				"ter",
+				"Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs"
+			],
+			[
+				"chefpri",
+				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
+			],
+			[
+				"colors",
+				"Assets/Scripts/ClassColors.cs"
+			],
+			[
+				"controller",
+				"Assets/Scripts/PlayerController.cs"
+			],
+			[
+				"actor",
+				"Assets/Scripts/Actor.cs"
+			],
+			[
+				"fisher",
+				"Assets/Scripts/Class Scripts/PlayerClassFisherman.cs"
+			],
+			[
+				"playerche",
+				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
+			],
+			[
+				"playercla",
+				"Assets/Scripts/Class Scripts/PlayerClass.cs"
+			],
+			[
 				"playerfisher",
 				"Assets/Scripts/Class Scripts/PlayerClassFisherman.cs"
 			],
@@ -609,10 +679,6 @@
 				"Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs"
 			],
 			[
-				"playerche",
-				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
-			],
-			[
 				"classcolor",
 				"Assets/Scripts/ClassColors.cs"
 			],
@@ -633,10 +699,6 @@
 				"Assets/Scripts/PlayerController.cs"
 			],
 			[
-				"actor",
-				"Assets/Scripts/ActorHealth.cs"
-			],
-			[
 				"actorhea",
 				"Assets/Scripts/ActorHealth.cs"
 			],
@@ -655,10 +717,6 @@
 			[
 				"enemy",
 				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
-			],
-			[
-				"controller",
-				"Assets/Scripts/PlayerController.cs"
 			],
 			[
 				"roll",
@@ -691,10 +749,6 @@
 			[
 				"particle",
 				"Assets/Prefabs/Particle.prefab"
-			],
-			[
-				"ter",
-				"Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs"
 			],
 			[
 				"tertia",
@@ -781,10 +835,6 @@
 				"Assets/Scripts/IPlayerClass.cs"
 			],
 			[
-				"playercla",
-				"Assets/Scripts/PlayerClassSoldier.cs"
-			],
-			[
 				"smooth",
 				"Assets/Scripts/SmoothMouse.cs"
 			],
@@ -838,11 +888,11 @@
 		"_vintageous_last_buffer_search": "method",
 		"_vintageous_last_buffer_search_command": "vi_slash",
 		"_vintageous_last_char_search_command": "vi_big_f",
-		"_vintageous_last_character_search": ":",
+		"_vintageous_last_character_search": "c",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{
-			"_cmdline_cd": "/Applications/Sublime Text.app/Contents/MacOS"
+			"_cmdline_cd": "/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts"
 		}
 	},
 	"show_minimap": true,

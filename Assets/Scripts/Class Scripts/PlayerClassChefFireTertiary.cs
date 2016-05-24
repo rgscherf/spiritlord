@@ -36,7 +36,7 @@ public class PlayerClassChefFireTertiary : MonoBehaviour {
 
         spr = GetComponent<SpriteRenderer>();
         rangeIndicatorSpr = transform.Find("Range Indicator").GetComponent<SpriteRenderer>();
-        rangeIndicatorSpr.color = spr.color * new Color(1, 1, 1, 0.5f);
+        rangeIndicatorSpr.color = spr.color * new Color(1, 1, 1, 0.3f);
     }
 
     void Update () {
