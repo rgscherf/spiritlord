@@ -1,0 +1,776 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"update",
+				"UpdateHealthTimer()	void"
+			],
+			[
+				"Upda",
+				"UpdateHealthTimer	(RollingController.cs)"
+			],
+			[
+				"game",
+				"gameObject	GameObject { get; }"
+			],
+			[
+				"health",
+				"healthController	ActorHealth"
+			],
+			[
+				"Rec",
+				"ReceiveDamage	(RollingController.cs)"
+			],
+			[
+				"heal",
+				"healhController	ActorHealth"
+			],
+			[
+				"invuln",
+				"invulnTimer"
+			],
+			[
+				"add",
+				"AddForce(Vector2 direction)	void"
+			],
+			[
+				"terti",
+				"tertiaryCooldownAmt"
+			],
+			[
+				"seonc",
+				"secondaryCooldownAmt"
+			],
+			[
+				"Quater",
+				"Quaternion	Quaternion"
+			],
+			[
+				"transform",
+				"transform.position"
+			],
+			[
+				"look",
+				"LookAt(Transform target, Vector3 worldUp)	void"
+			],
+			[
+				"primary",
+				"primaryThrowVelocity"
+			],
+			[
+				"Add",
+				"AddForce(Vector2 force)	void"
+			],
+			[
+				"transf",
+				"transform.up"
+			],
+			[
+				"rigi",
+				"rigidbody2D	Component { get; }"
+			],
+			[
+				"ri",
+				"Rigidbody2D	Rigidbody2D"
+			],
+			[
+				"second",
+				"secondaryThrowVelocity"
+			],
+			[
+				"transfom",
+				"transform.position"
+			],
+			[
+				"Check",
+				"CheckPathfindingActivation()	void"
+			],
+			[
+				"addfor",
+				"AddForce(Vector2 force)	void"
+			],
+			[
+				"Rigidbo",
+				"Rigidbody2D	Rigidbody2D"
+			],
+			[
+				"chefFire",
+				"chefFirePrimary	(Entities.cs)"
+			],
+			[
+				"la",
+				"NameToLayer(string layerName)	int"
+			],
+			[
+				"transfor",
+				"transform.position"
+			],
+			[
+				"raycase",
+				"Raycast(Vector2 origin, Vector2 direction)	RaycastHit2D"
+			],
+			[
+				"Physics",
+				"Physics2D	(PlayerClassChefTertiary.cs)"
+			],
+			[
+				"Parti",
+				"ParticleController"
+			],
+			[
+				"particle",
+				"particleType"
+			],
+			[
+				"particl",
+				"particleType"
+			],
+			[
+				"flicker",
+				"flickerColorPalette"
+			],
+			[
+				"Par",
+				"ParticleType"
+			],
+			[
+				"GetCom",
+				"GetComponent<T>()	T"
+			],
+			[
+				"Force",
+				"ForceMode2D	ForceMode2D"
+			],
+			[
+				"explo",
+				"explodeForce"
+			],
+			[
+				"circle",
+				"CircleCastAll(Vector2 origin, float radius, Vector2 direction)	RaycastHit2D[]"
+			],
+			[
+				"Physic",
+				"Physics2D	Physics2D"
+			],
+			[
+				"tertia",
+				"tertiaryCooldown"
+			],
+			[
+				"primar",
+				"primaryCooldown"
+			],
+			[
+				"timer",
+				"timerCurrent"
+			],
+			[
+				"chef",
+				"chefPrimaryFireProjectile	GameObject"
+			],
+			[
+				"cook",
+				"cookPrimaryFireProjectile	GameObject"
+			],
+			[
+				"class",
+				"classSprite"
+			],
+			[
+				"crea",
+				"CreateInstance(string className)	ScriptableObject"
+			],
+			[
+				"mov",
+				"movingV"
+			],
+			[
+				"Vie",
+				"ViewportToWorldPoint(Vector3 position)	Vector3"
+			],
+			[
+				"Cam",
+				"Camera.main	(PlayerController.cs)"
+			],
+			[
+				"GetAxi",
+				"GetAxisRaw(string axisName)	float"
+			],
+			[
+				"insi",
+				"insideUnitCircle	Vector2 { get; }"
+			],
+			[
+				"inside",
+				"insideUnitCircle	Vector2 { get; }"
+			],
+			[
+				"check",
+				"checkIfInAir"
+			],
+			[
+				"Make",
+				"MakeJumping()	void"
+			],
+			[
+				"GetCOm",
+				"GetComponent<T>()	T"
+			],
+			[
+				"gameObject",
+				"GameObject	GameObject"
+			],
+			[
+				"loc",
+				"localScale	Vector3 { get; set; }"
+			],
+			[
+				"Randominsi",
+				"Random.insideUnitSphere"
+			],
+			[
+				"sphere",
+				"insideUnitSphere	Vector3 { get; }"
+			],
+			[
+				"log",
+				"Log(object message)	void"
+			],
+			[
+				"dodge",
+				"DodgeType	DodgeType"
+			],
+			[
+				"Dodge",
+				"DodgeType"
+			],
+			[
+				"Dod",
+				"DodgeType"
+			],
+			[
+				"dog",
+				"DodgeType	DodgeType"
+			],
+			[
+				"dodg",
+				"dodgeVector"
+			],
+			[
+				"go",
+				"gotDodgeInput"
+			],
+			[
+				"Getcom",
+				"GetComponent<T>()	T"
+			],
+			[
+				"FindPl",
+				"FindPlayer()	void"
+			],
+			[
+				"Get",
+				"GetComponent<T>()	T"
+			],
+			[
+				"Unity",
+				"UnityEngine	(PlayerController.cs)"
+			],
+			[
+				"getcom",
+				"GetComponent<T>()	T"
+			],
+			[
+				"GetA",
+				"GetAxisRaw(string axisName)	float"
+			],
+			[
+				"serial",
+				"serializers"
+			]
+		]
+	},
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "over",
+		"selected_items":
+		[
+			[
+				"over",
+				"OmniSharpSublime: Override Targets"
+			],
+			[
+				"overri",
+				"OmniSharpSublime: Override Targets"
+			],
+			[
+				"override",
+				"OmniSharpSublime: Override Targets"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"code action",
+				"OmniSharpSublime: Code Actions"
+			],
+			[
+				"dash",
+				"DashDoc: invoke Dash with selected word"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/MovingEntity.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/ActorHealth.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/RollingController.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/Timer.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/Enemy Scripts/EnemyBasicController.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/ParticleController.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/Class Scripts/PlayerClassChef.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Prefabs/Particle.prefab",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/PlayerClassChef.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/PlayerClassChefFireTertiary.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/Entities.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/EnemyBasicController.cs",
+		"/Users/rgscherf/Library/Application Support/Sublime Text 3/Packages/User/SublimeAStyleFormatter.sublime-settings",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/PlayerClassChefTertiary.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/PlayerController.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/SmoothMouse.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/Utils.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/CameraController.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Prefabs/chefFireTertiary.prefab",
+		"/Users/rgscherf/projects/unity/rolling/PlayerController.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/PlayerClass.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/PlayerClassChefPrimary.cs",
+		"/Users/rgscherf/Library/Application Support/Sublime Text 3/Packages/User/C#.sublime-settings",
+		"/Users/rgscherf/Library/Application Support/Sublime Text 3/Packages/OmniSharp/OmniSharpSublime.sublime-settings",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/PlayerClassSoldier.cs",
+		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/IPlayerClass.cs",
+		"/Users/rgscherf/.bash_profile",
+		"/Users/rgscherf/projects/unity/plasma/Assets/Scripts/PlayerController.cs",
+		"/Users/rgscherf/projects/unity/plasma/Assets/Scripts/PlayerJumpDetectorController.cs",
+		"/Users/rgscherf/projects/unity/plasma/Assets/Scripts/SmoothMouse.cs",
+		"/Users/rgscherf/projects/python/gainful2/parsing/views.py",
+		"/Users/rgscherf/projects/python/gainful2/elm/src/Main.elm",
+		"/Users/rgscherf/projects/python/gainful2/elm/src/Update.elm",
+		"/Users/rgscherf/projects/python/gainful2/elm/src/Site.elm",
+		"/Users/rgscherf/projects/python/gainful2/parsing/templates/parsing/index.html"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"health",
+			"healhController",
+			"float",
+			"Vector2",
+			"explvector",
+			"xplosionvector",
+			"epl",
+			"grey",
+			"4",
+			"projectileTertiary",
+			"projectileSecondary",
+			"projectilePrimary",
+			"void",
+			"secondaryProjectile",
+			"projectileSecondary",
+			"projectilePrimary",
+			"projectileTertiary",
+			"projectileSecondary",
+			"projectilePrimary",
+			"primaryCooldown",
+			"tertiaryProjectile",
+			"chefFireTertiary",
+			"secondaryProjectile",
+			"primaryProjectile",
+			"up",
+			"isPathfinding",
+			"_PlayerSpeed",
+			"dir",
+			"15f",
+			"dashProjectile",
+			"bool",
+			"10",
+			"checkIfInAir",
+			".15f",
+			"0",
+			"1f",
+			"2f",
+			"diveKickForce",
+			"; ",
+			"moving",
+			"debig",
+			" = ",
+			"= "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"primar",
+				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
+			],
+			[
+				"moving",
+				"Assets/Scripts/MovingEntity.cs"
+			],
+			[
+				"enem",
+				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
+			],
+			[
+				"roll",
+				"Assets/Scripts/RollingController.cs"
+			],
+			[
+				"enemy",
+				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
+			],
+			[
+				"rolling",
+				"Assets/Scripts/RollingController.cs"
+			],
+			[
+				"actor",
+				"Assets/Scripts/ActorHealth.cs"
+			],
+			[
+				"actorhea",
+				"Assets/Scripts/ActorHealth.cs"
+			],
+			[
+				"imov",
+				"Assets/Scripts/IMovingEntity.cs"
+			],
+			[
+				"movingen",
+				"Assets/Scripts/MovingEntity.cs"
+			],
+			[
+				"healthc",
+				"Assets/Scripts/ActorHealth.cs"
+			],
+			[
+				"primary",
+				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
+			],
+			[
+				"rollingcon",
+				"Assets/Scripts/RollingController.cs"
+			],
+			[
+				"timer",
+				"Assets/Scripts/Timer.cs"
+			],
+			[
+				"class",
+				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
+			],
+			[
+				"ene",
+				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
+			],
+			[
+				"particle",
+				"Assets/Prefabs/Particle.prefab"
+			],
+			[
+				"ter",
+				"Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs"
+			],
+			[
+				"tertia",
+				"Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs"
+			],
+			[
+				"classc",
+				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
+			],
+			[
+				"chefprimar",
+				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
+			],
+			[
+				"classch",
+				"Assets/Scripts/PlayerClassChef.cs"
+			],
+			[
+				"par",
+				"Assets/Scripts/ParticleController.cs"
+			],
+			[
+				"tert",
+				"Assets/Scripts/PlayerClassChefFireTertiary.cs"
+			],
+			[
+				"partic",
+				"Assets/Scripts/ParticleController.cs"
+			],
+			[
+				"chefter",
+				"Assets/Scripts/PlayerClassChefFireTertiary.cs"
+			],
+			[
+				"entities",
+				"Assets/Scripts/Entities.cs"
+			],
+			[
+				"entite",
+				"Assets/Scripts/Entities.cs"
+			],
+			[
+				"chef",
+				"Assets/Scripts/PlayerClassChef.cs"
+			],
+			[
+				"teri",
+				"Assets/Scripts/PlayerClassChefTertiary.cs"
+			],
+			[
+				"basic",
+				"Assets/Scripts/EnemyBasicController.cs"
+			],
+			[
+				"playerch",
+				"Assets/Scripts/PlayerClassChef.cs"
+			],
+			[
+				"player",
+				"Assets/Scripts/PlayerController.cs"
+			],
+			[
+				"particl",
+				"Assets/Scripts/ParticleController.cs"
+			],
+			[
+				"chec",
+				"Assets/Scripts/PlayerClassChefTertiary.cs"
+			],
+			[
+				"entit",
+				"Assets/Scripts/Entities.cs"
+			],
+			[
+				"playercon",
+				"PlayerController.cs"
+			],
+			[
+				"utils",
+				"Assets/Scripts/Utils.cs"
+			],
+			[
+				"cooldown",
+				"Assets/Scripts/CooldownTimer.cs"
+			],
+			[
+				"playerclass",
+				"Assets/Scripts/PlayerClass.cs"
+			],
+			[
+				"enti",
+				"Assets/Scripts/Entities.cs"
+			],
+			[
+				"playe",
+				"Assets/Scripts/PlayerClassChefPrimary.cs"
+			],
+			[
+				"iplayer",
+				"Assets/Scripts/IPlayerClass.cs"
+			],
+			[
+				"playercla",
+				"Assets/Scripts/PlayerClassSoldier.cs"
+			],
+			[
+				"smooth",
+				"Assets/Scripts/SmoothMouse.cs"
+			],
+			[
+				"camera",
+				"Assets/Scripts/CameraController.cs"
+			],
+			[
+				"controller",
+				"Assets/Scripts/PlayerJumpDetectorController.cs"
+			],
+			[
+				"detec",
+				"Assets/Scripts/PlayerJumpDetectorController.cs"
+			],
+			[
+				"dete",
+				"Assets/Scripts/PlayerJumpDetectorController.cs"
+			],
+			[
+				"playerjum",
+				"Assets/Scripts/PlayerJumpDetectorController.cs"
+			],
+			[
+				"upd",
+				"elm/src/Update.elm"
+			],
+			[
+				"site",
+				"elm/src/Site.elm"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+		"_vintageous_last_buffer_search": "transform",
+		"_vintageous_last_buffer_search_command": "vi_slash",
+		"_vintageous_last_char_search_command": "vi_t",
+		"_vintageous_last_character_search": "{",
+		"_vintageous_reset_during_init": true,
+		"vintage":
+		{
+			"_cmdline_cd": "/Applications/Sublime Text.app/Contents/MacOS"
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 240.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
