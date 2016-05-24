@@ -26,7 +26,7 @@ public class ActorHealth : MonoBehaviour {
         if (invulnTimer.Check()) {
             currentHealth -= debitamount;
             invulnTimer.Reset();
-            go.GetComponent<MovingEntity>().Flicker(invulnTimer.Cooldown());
+            go.GetComponent<Actor>().Flicker(invulnTimer.Cooldown());
         }
         if (currentHealth <= 0) {
             Object.Destroy(go);

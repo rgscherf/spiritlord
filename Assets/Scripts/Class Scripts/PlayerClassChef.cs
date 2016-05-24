@@ -8,56 +8,54 @@ public class PlayerClassChef: PlayerClass {
     // secondary fire: wind-up a drumstick, which will attract enemies where it lands.
     // tertiary fire: slide out a cauldron of stew, which will explode and push away enemies after a delay.
 
-    public Sprite classSprite;
+    Color color;
+    Sprite _chefSprite;
 
     public GameObject primaryProjectile;
     public GameObject secondaryProjectile;
     public GameObject tertiaryProjectile;
 
-    Timer primaryCooldown;
-    Timer secondaryCooldown;
-    Timer tertiaryCooldown;
-
-    const float primaryCooldownAmt = 0.5f;
-    const float secondaryCooldownAmt = 2f;
-    const float tertiaryCooldownAmt = 2f;
-
-    const float primaryThrowVelocity = 500f;
+    const float primaryThrowVelocity = 450f;
     const float secondaryDeathTimer = 3.5f;
     const float secondaryThrowVelocity = 200f;
 
-
-    public float _speed = 1500f;
-    public override float PlayerSpeed { get { return _speed; } }
-
+    public override float PlayerSpeed { get { return 1200f; } }
+    public override Sprite ClassSprite {get { return _chefSprite; }}
+    public override Color ClassColor {get { return color; }}
+    public override void CallBaseStart() { BaseStart(); }
+    public override void CallBaseUpdate() { BaseUpdate(); }
 
     GameObject MakeProjectile(GameObject proj) {
         return (GameObject) Instantiate(proj, transform.position + transform.up, transform.rotation);
     }
 
-    public void Awake() {
+    void Awake() {
         var entities = GameObject.Find("GameController").GetComponent<Entities>();
+        _chefSprite = entities.chefSprite;
 
-        classSprite = entities.chefSprite;
+        color = ClassColors.chefColor;
 
         primaryProjectile = entities.chefFirePrimary;
         secondaryProjectile = entities.chefFireSecondary;
         tertiaryProjectile = entities.chefFireTertiary;
 
-        primaryCooldown = new Timer(primaryCooldownAmt, true);
-        secondaryCooldown = new Timer(secondaryCooldownAmt, true);
-        tertiaryCooldown = new Timer(tertiaryCooldownAmt, true);
+        primaryCooldownAmt = 0.75f;
+        secondaryCooldownAmt = 2f;
+        tertiaryCooldownAmt = 2f;
     }
 
-    public void Update() {
-        primaryCooldown.Tick(Time.deltaTime);
-        secondaryCooldown.Tick(Time.deltaTime);
-        tertiaryCooldown.Tick(Time.deltaTime);
+    void Start() {
+        CallBaseStart();
+    }
+
+    void Update() {
+        CallBaseUpdate();
     }
 
     public override void FirePrimary() {
         if (primaryCooldown.Check()) {
             var p = MakeProjectile(primaryProjectile);
+            ChangeSpriteColor(p);
             p.GetComponent<Rigidbody2D>().AddForce(transform.up * primaryThrowVelocity);
             p.GetComponent<Rigidbody2D>().AddTorque(20 * (Random.value > 0.5f ? 1f : -1f));
             primaryCooldown.Reset();
@@ -67,6 +65,7 @@ public class PlayerClassChef: PlayerClass {
     public override void FireSecondary() {
         if (secondaryCooldown.Check()) {
             var p  = (GameObject) Instantiate(secondaryProjectile, transform.position + transform.up, transform.rotation);
+            ChangeSpriteColor(p);
             var rb = p.GetComponent<Rigidbody2D>();
             rb.AddTorque(30f);
             rb.AddForce(transform.up * secondaryThrowVelocity);
@@ -77,14 +76,14 @@ public class PlayerClassChef: PlayerClass {
 
     public override void FireTertiary() {
         if (tertiaryCooldown.Check()) {
-            // Instantiate(tertiaryProjectile, gameObject.transform.position + gameObject.transform.up, gameObject.transform.rotation);
-            Instantiate(tertiaryProjectile, gameObject.transform.position, gameObject.transform.rotation);
+            var p = (GameObject) Instantiate(tertiaryProjectile, gameObject.transform.position, gameObject.transform.rotation);
+            ChangeSpriteColor(p);
             tertiaryCooldown.Reset();
         }
     }
 
-    public override Sprite ClassSprite {
-        get { return classSprite; }
+    void ChangeSpriteColor(GameObject go) {
+        go.GetComponent<SpriteRenderer>().color = color;
     }
 
 }

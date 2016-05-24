@@ -72,7 +72,7 @@ public class PlayerClassChefFireTertiary : MonoBehaviour {
             var rp = r.GetComponent<ParticleController>();
             rp.Init( ParticleController.ParticleType.effects
                      , true
-                     , Color.white
+                     , spr.color
                      , 0.5f
                      , 2 );
             var xplvector = Entities.OutwardExplosionVector(transform.position, (Random.insideUnitCircle * 5) + (Vector2) transform.position, 450f);

@@ -35,7 +35,7 @@ public class ParticleController : MonoBehaviour {
         color = col;
         flicker = doesFlicker;
         if (flicker) {
-            flickerColorPalette = new Color[] { col, col * new Color(1, 1, 1, 0.6f), col * new Color(1, 1, 1, 0.85f)};
+            flickerColorPalette = new Color[] { col, col * new Color(1, 1, 1, 0.6f), col * new Color(1, 1, 1, 0.8f)};
         }
         CallDeathTimer(dTimer);
     }

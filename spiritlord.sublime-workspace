@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"tick",
+				"TickCheck(float dt)	bool"
+			],
+			[
+				"Class",
+				"ClassColor"
+			],
+			[
+				"En",
+				"EntityStart"
+			],
+			[
+				"entity",
+				"EntityUpdate()	void"
+			],
+			[
+				"Ent",
+				"EntityUpdate()	void"
+			],
+			[
+				"flicker",
+				"flickerTimer"
+			],
+			[
 				"update",
 				"UpdateHealthTimer()	void"
 			],
@@ -126,10 +150,6 @@
 			[
 				"particl",
 				"particleType"
-			],
-			[
-				"flicker",
-				"flickerColorPalette"
 			],
 			[
 				"Par",
@@ -309,8 +329,24 @@
 				"OmniSharpSublime: Override Targets"
 			],
 			[
+				"overrid",
+				"OmniSharpSublime: Override Targets"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"ov",
+				"OmniSharpSublime: Override Targets"
+			],
+			[
 				"overri",
 				"OmniSharpSublime: Override Targets"
+			],
+			[
+				"code ac",
+				"OmniSharpSublime: Code Actions"
 			],
 			[
 				"override",
@@ -353,6 +389,18 @@
 	},
 	"file_history":
 	[
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Timer.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerController.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChef.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClass.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/ClassColors.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Enemy Scripts/EnemyBasicController.cs",
+		"/Users/rgscherf/Library/Application Support/Sublime Text 3/Packages/User/SublimeAStyleFormatter.sublime-settings",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/ActorHealth.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/MovingEntity.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/PlayerController.cs",
 		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/MovingEntity.cs",
 		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/ActorHealth.cs",
 		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/RollingController.cs",
@@ -367,7 +415,6 @@
 		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/PlayerClassChefFireTertiary.cs",
 		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/Entities.cs",
 		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/EnemyBasicController.cs",
-		"/Users/rgscherf/Library/Application Support/Sublime Text 3/Packages/User/SublimeAStyleFormatter.sublime-settings",
 		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/PlayerClassChefTertiary.cs",
 		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/PlayerController.cs",
 		"/Users/rgscherf/projects/unity/rolling/Assets/Scripts/SmoothMouse.cs",
@@ -393,7 +440,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -407,6 +454,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Debug",
+			"UpdateFlicker",
+			"ob",
 			"health",
 			"healhController",
 			"float",
@@ -481,11 +531,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -524,28 +581,56 @@
 		"selected_items":
 		[
 			[
+				"playerfisher",
+				"Assets/Scripts/Class Scripts/PlayerClassFisherman.cs"
+			],
+			[
+				"particlecon",
+				"Assets/Scripts/ParticleController.cs"
+			],
+			[
+				"timer",
+				"Assets/Scripts/Timer.cs"
+			],
+			[
+				"primary",
+				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
+			],
+			[
+				"class",
+				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
+			],
+			[
 				"primar",
 				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
 			],
 			[
-				"moving",
-				"Assets/Scripts/MovingEntity.cs"
+				"tert",
+				"Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs"
 			],
 			[
-				"enem",
-				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
+				"playerche",
+				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
 			],
 			[
-				"roll",
-				"Assets/Scripts/RollingController.cs"
+				"classcolor",
+				"Assets/Scripts/ClassColors.cs"
 			],
 			[
-				"enemy",
-				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
+				"playerclass",
+				"Assets/Scripts/Class Scripts/PlayerClass.cs"
 			],
 			[
-				"rolling",
-				"Assets/Scripts/RollingController.cs"
+				"chef",
+				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
+			],
+			[
+				"",
+				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
+			],
+			[
+				"player",
+				"Assets/Scripts/PlayerController.cs"
 			],
 			[
 				"actor",
@@ -554,6 +639,34 @@
 			[
 				"actorhea",
 				"Assets/Scripts/ActorHealth.cs"
+			],
+			[
+				"enem",
+				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
+			],
+			[
+				"moving",
+				"Assets/Scripts/MovingEntity.cs"
+			],
+			[
+				"movin",
+				"Assets/Scripts/MovingEntity.cs"
+			],
+			[
+				"enemy",
+				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
+			],
+			[
+				"controller",
+				"Assets/Scripts/PlayerController.cs"
+			],
+			[
+				"roll",
+				"Assets/Scripts/RollingController.cs"
+			],
+			[
+				"rolling",
+				"Assets/Scripts/RollingController.cs"
 			],
 			[
 				"imov",
@@ -568,20 +681,8 @@
 				"Assets/Scripts/ActorHealth.cs"
 			],
 			[
-				"primary",
-				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
-			],
-			[
 				"rollingcon",
 				"Assets/Scripts/RollingController.cs"
-			],
-			[
-				"timer",
-				"Assets/Scripts/Timer.cs"
-			],
-			[
-				"class",
-				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
 			],
 			[
 				"ene",
@@ -616,10 +717,6 @@
 				"Assets/Scripts/ParticleController.cs"
 			],
 			[
-				"tert",
-				"Assets/Scripts/PlayerClassChefFireTertiary.cs"
-			],
-			[
 				"partic",
 				"Assets/Scripts/ParticleController.cs"
 			],
@@ -636,10 +733,6 @@
 				"Assets/Scripts/Entities.cs"
 			],
 			[
-				"chef",
-				"Assets/Scripts/PlayerClassChef.cs"
-			],
-			[
 				"teri",
 				"Assets/Scripts/PlayerClassChefTertiary.cs"
 			],
@@ -650,10 +743,6 @@
 			[
 				"playerch",
 				"Assets/Scripts/PlayerClassChef.cs"
-			],
-			[
-				"player",
-				"Assets/Scripts/PlayerController.cs"
 			],
 			[
 				"particl",
@@ -680,10 +769,6 @@
 				"Assets/Scripts/CooldownTimer.cs"
 			],
 			[
-				"playerclass",
-				"Assets/Scripts/PlayerClass.cs"
-			],
-			[
 				"enti",
 				"Assets/Scripts/Entities.cs"
 			],
@@ -706,10 +791,6 @@
 			[
 				"camera",
 				"Assets/Scripts/CameraController.cs"
-			],
-			[
-				"controller",
-				"Assets/Scripts/PlayerJumpDetectorController.cs"
 			],
 			[
 				"detec",
@@ -754,10 +835,10 @@
 	},
 	"settings":
 	{
-		"_vintageous_last_buffer_search": "transform",
+		"_vintageous_last_buffer_search": "method",
 		"_vintageous_last_buffer_search_command": "vi_slash",
-		"_vintageous_last_char_search_command": "vi_t",
-		"_vintageous_last_character_search": "{",
+		"_vintageous_last_char_search_command": "vi_big_f",
+		"_vintageous_last_character_search": ":",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{

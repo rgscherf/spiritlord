@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class MovingEntity : MonoBehaviour {
+public abstract class Actor : MonoBehaviour {
 
     public abstract Color BaseColor {get; set;}
     // this is messy but we need to ensure

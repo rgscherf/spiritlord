@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Linq;
 
-public class EnemyBasicController : MovingEntity {
+public class EnemyBasicController : Actor {
 
     public override Color BaseColor {get; set;}
 

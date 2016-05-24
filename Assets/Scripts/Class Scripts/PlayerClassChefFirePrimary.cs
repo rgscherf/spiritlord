@@ -8,12 +8,21 @@ public class PlayerClassChefFirePrimary : MonoBehaviour {
     // float coneLength = 5f;
     // float coneWidth = 3f;
     const float puddleDiameter = 1.5f;
+    float deathTime = 1.7f;
+    Timer deathTimer;
 
     void Start() {
         entities = GameObject.Find("GameController").GetComponent<Entities>();
+        deathTimer = new Timer(deathTime);
     }
 
-    void Explode(Vector2 other) {
+    void Update() {
+        if (deathTimer.TickCheck(Time.deltaTime)) {
+            Explode();
+        }
+    }
+
+    void Explode() {
         DamageEnemies();
         const int numParticles = 200;
         for (int i = 0; i < numParticles; i++) {
@@ -23,7 +32,7 @@ public class PlayerClassChefFirePrimary : MonoBehaviour {
             var rp = r.GetComponent<ParticleController>();
             rp.Init( ParticleController.ParticleType.effects
                      , true
-                     , Color.white
+                     , GetComponent<SpriteRenderer>().color
                      , Random.Range(0.12f, 0.4f)
                      , (Random.value > 0.5f ? 1 : 2) );
         }
@@ -34,13 +43,13 @@ public class PlayerClassChefFirePrimary : MonoBehaviour {
         var coll = Physics2D.OverlapCircleAll(transform.position, puddleDiameter);
         foreach (var c in coll) {
             if (c.gameObject.tag == "Enemy") {
-                c.gameObject.GetComponent<MovingEntity>().ReceiveDamage(1);
+                c.gameObject.GetComponent<Actor>().ReceiveDamage(1);
             }
         }
     }
 
     void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Player") { return; }
-        Explode(other.contacts[0].point);
+        Explode();
     }
 }

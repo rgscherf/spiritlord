@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class PlayerController : MovingEntity {
+public class PlayerController : Actor {
 
     public override Color BaseColor {get; set;}
     public Entities entities;
@@ -23,7 +23,6 @@ public class PlayerController : MovingEntity {
         SwapClass(startingClass);
 
         BaseColor = Color.white;
-
         BaseStart();
     }
 
@@ -61,14 +60,16 @@ public class PlayerController : MovingEntity {
     void SwapClass(PlayerClass newClass) {
         currentClass = newClass;
         playerSpeed = currentClass.PlayerSpeed;
-        gameObject.GetComponent<SpriteRenderer>().sprite = currentClass.ClassSprite;
+        GetComponent<SpriteRenderer>().sprite = currentClass.ClassSprite;
+        BaseColor = currentClass.ClassColor;
+        GetComponent<SpriteRenderer>().color = currentClass.ClassColor;
     }
 
     public override void BaseUpdate() {
-        base.EntityUpdate();
+        EntityUpdate();
     }
     public override void BaseStart() {
-        base.EntityStart();
-        base.healthController.Init(6);
+        EntityStart();
+        healthController.Init(6);
     }
 }
