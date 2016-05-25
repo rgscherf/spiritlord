@@ -19,7 +19,8 @@ public class PlayerController : Actor {
     }
 
     void Start() {
-        PlayerClass startingClass = gameObject.AddComponent<PlayerClassFisherman>();
+        // PlayerClass startingClass = gameObject.AddComponent<Mermaid>();
+        PlayerClass startingClass = gameObject.AddComponent<PlayerClassChef>();
         SwapClass(startingClass);
 
         BaseColor = Color.white;
@@ -38,6 +39,16 @@ public class PlayerController : Actor {
 
         if (Input.GetAxisRaw("FireTertiary") == 1) {
             currentClass.FireTertiary();
+        }
+
+        if (Input.GetAxisRaw("SelectClass1") == 1) {
+            var c = gameObject.AddComponent<PlayerClassChef>();
+            SwapClass(c);
+        }
+
+        if (Input.GetAxisRaw("SelectClass2") == 1) {
+            var c = gameObject.AddComponent<PlayerClassMermaid>();
+            SwapClass(c);
         }
 
         movingV = Input.GetAxisRaw("Vertical") ;

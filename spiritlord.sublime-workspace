@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"SpriteRenderer",
+				"SpriteRenderer>().color	(PlayerController.cs)"
+			],
+			[
+				"ClassCOl",
+				"ClassColors	ClassColors"
+			],
+			[
 				"CallBase",
 				"CallBaseStart	(PlayerClass.cs)"
 			],
@@ -344,17 +352,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "over",
+		"height": 388.0,
+		"last_filter": "color",
 		"selected_items":
 		[
 			[
-				"over",
-				"OmniSharpSublime: Override Targets"
-			],
-			[
 				"color",
 				"Color Picker"
+			],
+			[
+				"over",
+				"OmniSharpSublime: Override Targets"
 			],
 			[
 				"overrid",
@@ -413,8 +421,9 @@
 	},
 	"file_history":
 	[
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Actor.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassMermaid.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassFisherman.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Actor.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerController.cs",
@@ -480,6 +489,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"0",
+			"Color",
+			"color",
+			"Color",
+			"color",
+			"Color",
+			"color",
+			"_chefSprite",
 			"CallBaseAwake",
 			"Debug",
 			"UpdateFlicker",
@@ -564,19 +581,12 @@
 				0,
 				2,
 				1
-			],
-			[
-				2,
-				0,
-				3,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.33,
-			0.66,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -615,6 +625,46 @@
 		"selected_items":
 		[
 			[
+				"playercon",
+				"Assets/Scripts/PlayerController.cs"
+			],
+			[
+				"mermaid",
+				"Assets/Scripts/Class Scripts/PlayerClassMermaid.cs"
+			],
+			[
+				"playerclass",
+				"Assets/Scripts/Class Scripts/PlayerClassMermaid.cs"
+			],
+			[
+				"merma",
+				"Assets/Scripts/Class Scripts/PlayerClassMermaid.cs"
+			],
+			[
+				"colors",
+				"Assets/Scripts/ClassColors.cs"
+			],
+			[
+				"controller",
+				"Assets/Scripts/PlayerController.cs"
+			],
+			[
+				"entii",
+				"Assets/Scripts/Entities.cs"
+			],
+			[
+				"fish",
+				"Assets/Scripts/Class Scripts/PlayerClassFisherman.cs"
+			],
+			[
+				"classche",
+				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
+			],
+			[
+				"class",
+				"Assets/Scripts/Class Scripts/PlayerClass.cs"
+			],
+			[
 				"fisherman",
 				"Assets/Scripts/Class Scripts/PlayerClassFisherman.cs"
 			],
@@ -625,14 +675,6 @@
 			[
 				"chefpri",
 				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
-			],
-			[
-				"colors",
-				"Assets/Scripts/ClassColors.cs"
-			],
-			[
-				"controller",
-				"Assets/Scripts/PlayerController.cs"
 			],
 			[
 				"actor",
@@ -667,10 +709,6 @@
 				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
 			],
 			[
-				"class",
-				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
-			],
-			[
 				"primar",
 				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
 			],
@@ -681,10 +719,6 @@
 			[
 				"classcolor",
 				"Assets/Scripts/ClassColors.cs"
-			],
-			[
-				"playerclass",
-				"Assets/Scripts/Class Scripts/PlayerClass.cs"
 			],
 			[
 				"chef",
@@ -811,10 +845,6 @@
 				"Assets/Scripts/Entities.cs"
 			],
 			[
-				"playercon",
-				"PlayerController.cs"
-			],
-			[
 				"utils",
 				"Assets/Scripts/Utils.cs"
 			],
@@ -887,8 +917,8 @@
 	{
 		"_vintageous_last_buffer_search": "method",
 		"_vintageous_last_buffer_search_command": "vi_slash",
-		"_vintageous_last_char_search_command": "vi_big_f",
-		"_vintageous_last_character_search": "c",
+		"_vintageous_last_char_search_command": "vi_f",
+		"_vintageous_last_character_search": "(",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{
