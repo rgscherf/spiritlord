@@ -15,7 +15,7 @@ public class PlayerClassChefFireTertiary : MonoBehaviour {
     float explodeRadius = 3.25f;
     int explosionParticles = 20;
 
-    float deathTimerValue = 0.75f;
+    float deathTimerValue = 0.5f;
 
     bool hasPushed;
 

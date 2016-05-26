@@ -48,11 +48,7 @@ public class PlayerClassMermaid : PlayerClass {
     Sprite underwaterSprite;
     Timer spcRepeatGuard;
 
-    int numWaterDropsPerFrame = 1;
-    float waterDropLifetime = 4f;
-
     bool droppingWater;
-
 
     const float coolDownBonusForEndingDiveEarly = 0.5f;
 
@@ -62,14 +58,15 @@ public class PlayerClassMermaid : PlayerClass {
         _baseColor = ClassColors.mermaidColor;
 
         primaryCooldownAmt = 0.4f;
-        secondaryCooldownAmt = 0.5f;
+        secondaryCooldownAmt = 3f;
         tertiaryCooldownAmt = 2f;
 
-        underwaterTimer = new Timer(2f, true);
+        underwaterTimer = new Timer(1.5f, true);
         underwaterSprite = entities.mermaidUnderwaterSprite;
     }
 
     void Start() {
+        BlockEnemyPathing(false);
         spcRepeatGuard = new Timer(0.2f);
         droppingWater = true;
         CallBaseStart();
@@ -78,31 +75,45 @@ public class PlayerClassMermaid : PlayerClass {
     void Update() {
         spcRepeatGuard.Tick(Time.deltaTime);
         underwaterTimer.Tick(Time.deltaTime);
-        if (underwaterTimer.Check() && underwater) {
-            UnderwaterDisable();
-            tertiaryCooldown = new Timer(tertiaryCooldownAmt);
+        if (underwater) {
+            if (NotTouchingWater() || underwaterTimer.Check()) {
+                UnderwaterDisable();
+                tertiaryCooldown = new Timer(tertiaryCooldownAmt);
+            }
         }
+
         if (droppingWater) { DropWater(); }
 
+        if (secondaryWinding && Input.GetAxisRaw("FireSecondary") == 0f) {
+            ReleaseFish();
+        }
 
         CallBaseUpdate();
     }
 
+    bool NotTouchingWater() {
+        var w = Physics2D.OverlapCircleAll(transform.position, 3f)
+                .Where( c => c.gameObject.tag == "Mermaidwater")
+                .ToArray()
+                .Length;
+        return w == 0;
+    }
+
     void DropWater() {
-        const float dropRadius = 1.5f;
-        const int maxNumDrops = 20;
-        int numDropsHere = Physics2D.OverlapCircleAll(transform.position, dropRadius)
-                           .Where( c => c.gameObject.tag == "Particle")
-                           .Where( c => c.GetComponent<ParticleController>().particleType == ParticleType.mermaidWater)
-                           .ToArray()
-                           .Length;
-        Debug.Log(numDropsHere);
-        if (numDropsHere > maxNumDrops) { return; }
-        for (var i = 0; i < numWaterDropsPerFrame; i++) {
-            var rand = (Vector2) Random.insideUnitCircle * dropRadius;
-            var pos = rand + (Vector2) transform.position + (Vector2) transform.TransformDirection(new Vector2(0f, -1f));
-            var par = (GameObject) Instantiate(entities.particle, pos, transform.rotation);
-            MakeWaterParticle(par);
+        var nearestX = (int) Mathf.Round(transform.position.x);
+        var nearestY = (int) Mathf.Round(transform.position.y);
+        for (var x = -1; x <= 1; x++) {
+            for (var y = -1; y <= 1; y++) {
+                var nearestIntPos = new Vector3(nearestX + x, nearestY + y, 1f);
+                var p = Physics2D.OverlapCircleAll((Vector2) nearestIntPos, 0.1f)
+                        .Where( c => c.gameObject.tag == "Mermaidwater")
+                        .ToArray()
+                        .Length;
+                if (p != 0 ) { continue; }
+                var w = (GameObject) Instantiate(entities.mermaidWaterSprite, nearestIntPos, Quaternion.identity);
+                w.GetComponent<SpriteRenderer>().color = ClassColors.mermaidColor * new Color(1f, 1f, 1f, 0.5f);
+                Object.Destroy(w, 6f);
+            }
         }
     }
 
@@ -117,7 +128,40 @@ public class PlayerClassMermaid : PlayerClass {
         }
     }
 
-    public override void FireSecondary() {}
+    bool secondaryWinding;
+    float timeHeld;
+    const float maxTimeHeld = 2;
+    GameObject currentFish;
+    float maxForce = 3500f;
+
+    void ReleaseFish() {
+        secondaryWinding = false;
+        secondaryCooldown.Reset();
+
+        currentFish.GetComponent<Rigidbody2D>().AddForce(transform.up * (maxForce * (timeHeld / maxTimeHeld)));
+    }
+
+    public override void FireSecondary() {
+        // we are cheating the contract by checking for fire release in Update().
+        if (secondaryCooldown.Check()) {
+            if (!secondaryWinding) {
+                currentFish = (GameObject) Instantiate(entities.mermaidFish, transform.position + transform.TransformDirection(new Vector3(0f, -1f, 0f)), transform.rotation);
+                timeHeld = 0;
+                secondaryWinding = true;
+            } else {
+                timeHeld += Time.deltaTime;
+                currentFish.transform.rotation = transform.rotation;
+                currentFish.transform.position = transform.position + transform.TransformDirection(new Vector3(0f, -1f, 0f));
+                currentFish.GetComponent<SpriteRenderer>().color = Color.Lerp(ClassColors.mermaidColor * new Color(1f, 1f, 1f, 0.2f),
+                        ClassColors.mermaidColor,
+                        timeHeld / maxTimeHeld);
+
+                if (timeHeld >= maxTimeHeld) {
+                    ReleaseFish();
+                }
+            }
+        }
+    }
 
     public override void FireTertiary() {
         if (spcRepeatGuard.Check()) {
@@ -134,7 +178,6 @@ public class PlayerClassMermaid : PlayerClass {
         }
     }
 
-
     void UnderwaterEnable() {
         underwater = true;
         underwaterTimer.Reset();
@@ -142,27 +185,7 @@ public class PlayerClassMermaid : PlayerClass {
         BlockEnemyPathing(true);
         _speedMult = 3f;
         gameObject.layer = LayerMask.NameToLayer("ChefDrumstick");
-        // spawn some water particles around me
-        SpawnRandomWaterParticles(100, 30, 500);
-    }
-
-    void MakeWaterParticle(GameObject par) {
-        par.GetComponent<ParticleController>().Init(
-            ParticleType.mermaidWater
-            , true
-            , ClassColors.mermaidColor * new Color(1.5f, 1.5f, 1.5f, 0.4f)
-            , waterDropLifetime
-            , 4);
-    }
-
-    void SpawnRandomWaterParticles(int n, float minForce, float maxForce) {
-        for (var i = 0; i < n; i++) {
-            var par = (GameObject) Instantiate(entities.particle, transform.position, transform.rotation);
-            MakeWaterParticle(par);
-            var force = Random.Range(minForce, maxForce);
-            par.GetComponent<Rigidbody2D>().drag = 2f;
-            par.GetComponent<Rigidbody2D>().AddForce(((Vector3)Random.insideUnitCircle.normalized + transform.up) * force);
-        }
+        droppingWater = false;
     }
 
     void UnderwaterDisable() {
@@ -171,12 +194,12 @@ public class PlayerClassMermaid : PlayerClass {
         BlockEnemyPathing(false);
         _speedMult = 1f;
         gameObject.layer = LayerMask.NameToLayer("Player");
-        // spawn some water particles around me
+        droppingWater = true;
     }
 
     public override void ClassSwitchCleanup() {
-        droppingWater = false;
         UnderwaterDisable();
+        droppingWater = false;
     }
 
 }

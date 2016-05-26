@@ -42,7 +42,7 @@ public class PlayerClassChef: PlayerClass {
 
         primaryCooldownAmt = 0.75f;
         secondaryCooldownAmt = 2f;
-        tertiaryCooldownAmt = 2f;
+        tertiaryCooldownAmt = 1.5f;
     }
 
     void Start() {

@@ -54,7 +54,8 @@ public class EnemyBasicController : Actor {
             if (dist < detectionDistance) {
                 // raycast blocks on other enemies, so watch line of sight during placement.
                 // could not figure out layermasks. try later! (2016-05-23)
-                var hit = Physics2D.Raycast(transform.position, playerTransform.position - transform.position);// , Mathf.Infinity, LayerMask.NameToLayer("Player"));
+                var mask = LayerMask.GetMask("Geometry", "Player");
+                var hit = Physics2D.Raycast(transform.position, playerTransform.position - transform.position, Mathf.Infinity, mask);
                 if (hit.collider != null && hit.collider.tag == "Player") {
                     pathfinding = true;
                 }
