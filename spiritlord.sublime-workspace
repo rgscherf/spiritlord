@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"scal",
+				"scale(GameObject gameObject, Vector3 to, float time)	LTDescr"
+			],
+			[
+				"Leant",
+				"LeanTween	LeanTween"
+			],
+			[
+				"Blo",
+				"BlockEnemyPathing(bool v)	void"
+			],
+			[
+				"over",
+				"OverlapCircle(Vector2 point, float radius, int layerMask)	Collider2D"
+			],
+			[
+				"Tra",
+				"TransformDirection(Vector3 direction)	Vector3"
+			],
+			[
+				"gameO",
+				"GameObject	GameObject"
+			],
+			[
+				"secondar",
+				"secondaryWinding"
+			],
+			[
+				"secon",
+				"secondaryWinding	bool"
+			],
+			[
+				"geta",
+				"GetAxisRaw(string axisName)	float"
+			],
+			[
+				"R",
+				"Round(float f)	float"
+			],
+			[
+				"L",
+				"Length	int { get; }"
+			],
+			[
+				"parti",
+				"particleType	ParticleType"
+			],
+			[
+				"overla",
+				"OverlapCircleAll(Vector2 point, float radius)	Collider2D[]"
+			],
+			[
+				"Spawn",
+				"SpawnRandomWaterParticles(int n, float minForce, float maxForce)	void"
+			],
+			[
 				"water",
 				"waterDropLifetime"
 			],
@@ -497,6 +553,9 @@
 	},
 	"file_history":
 	[
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Entities.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChefFirePrimary.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChefFireTertiary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Timer.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChef.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/EnemyBasicController.cs",
@@ -504,7 +563,6 @@
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerController.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Actor.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassMermaidTrident.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Entities.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassMermaid.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/spiritlord.sublime-project",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Prefabs/PlayerClassChefFirePrimary.prefab",
@@ -559,7 +617,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -573,6 +631,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"CheckUnderwaterProximity",
+			"3f",
+			"1f",
+			"1",
 			"underwaterPressCooldown",
 			"PlayerSpeed",
 			"playerSpeed",
@@ -651,7 +713,7 @@
 	},
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -666,18 +728,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.652506963788,
 			1.0
 		],
 		"rows":
@@ -706,7 +761,7 @@
 	"pinned_build_system": "",
 	"replace":
 	{
-		"height": 50.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -715,6 +770,34 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"chef",
+				"Assets/Scripts/PlayerClassChef.cs"
+			],
+			[
+				"tertia",
+				"Assets/Scripts/PlayerClassChefFireTertiary.cs"
+			],
+			[
+				"basic",
+				"Assets/Scripts/EnemyBasicController.cs"
+			],
+			[
+				"entities",
+				"Assets/Scripts/Entities.cs"
+			],
+			[
+				"primary",
+				"Assets/Scripts/PlayerClassChefFirePrimary.cs"
+			],
+			[
+				"particle",
+				"Assets/Scripts/ParticleController.cs"
+			],
+			[
+				"merma",
+				"Assets/Scripts/PlayerClassMermaid.cs"
+			],
 			[
 				"particl",
 				"Assets/Scripts/ParticleController.cs"
@@ -726,10 +809,6 @@
 			[
 				"timer",
 				"Assets/Scripts/Timer.cs"
-			],
-			[
-				"merma",
-				"Assets/Scripts/PlayerClassMermaid.cs"
 			],
 			[
 				"playercon",
@@ -752,10 +831,6 @@
 				"Assets/Scripts/PlayerClass.cs"
 			],
 			[
-				"entities",
-				"Assets/Scripts/Entities.cs"
-			],
-			[
 				"player",
 				"Assets/Scripts/PlayerClass.cs"
 			],
@@ -766,10 +841,6 @@
 			[
 				"chefpri",
 				"Assets/Scripts/PlayerClassChefFirePrimary.cs"
-			],
-			[
-				"chef",
-				"Assets/Prefabs/PlayerClassChefFirePrimary.prefab"
 			],
 			[
 				"mermaid",
@@ -822,10 +893,6 @@
 			[
 				"particlecon",
 				"Assets/Scripts/ParticleController.cs"
-			],
-			[
-				"primary",
-				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
 			],
 			[
 				"primar",
@@ -888,14 +955,6 @@
 				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
 			],
 			[
-				"particle",
-				"Assets/Prefabs/Particle.prefab"
-			],
-			[
-				"tertia",
-				"Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs"
-			],
-			[
 				"classc",
 				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
 			],
@@ -926,10 +985,6 @@
 			[
 				"teri",
 				"Assets/Scripts/PlayerClassChefTertiary.cs"
-			],
-			[
-				"basic",
-				"Assets/Scripts/EnemyBasicController.cs"
 			],
 			[
 				"chec",
@@ -1013,7 +1068,7 @@
 		"_vintageous_last_buffer_search": "method",
 		"_vintageous_last_buffer_search_command": "vi_slash",
 		"_vintageous_last_char_search_command": "vi_f",
-		"_vintageous_last_character_search": ",",
+		"_vintageous_last_character_search": "(",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{

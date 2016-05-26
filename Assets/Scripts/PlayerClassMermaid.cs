@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PlayerClassMermaid : PlayerClass {
     // MERMAID
-    // mermaid is a powerful hit-and-run melee attacker
+    // mermaid is a powerful hit-and-run attacker
     // with awesome mobility
 
     // the fisherman is all about his fishing rod.
@@ -82,10 +82,15 @@ public class PlayerClassMermaid : PlayerClass {
             }
         }
 
-        if (droppingWater) { DropWater(); }
+        if (droppingWater) { DropWater(1); }
 
         if (secondaryWinding && Input.GetAxisRaw("FireSecondary") == 0f) {
             ReleaseFish();
+        }
+
+        if (flyingfish && Vector3.Distance(currentFishTarget, currentFish.transform.position) < 5f) {
+            flyingfish = false;
+            currentFish.GetComponent<Rigidbody2D>().drag = 5f;
         }
 
         CallBaseUpdate();
@@ -99,11 +104,11 @@ public class PlayerClassMermaid : PlayerClass {
         return w == 0;
     }
 
-    void DropWater() {
+    void DropWater(int radius) {
         var nearestX = (int) Mathf.Round(transform.position.x);
         var nearestY = (int) Mathf.Round(transform.position.y);
-        for (var x = -1; x <= 1; x++) {
-            for (var y = -1; y <= 1; y++) {
+        for (var x = -radius; x <= radius; x++) {
+            for (var y = -radius; y <= radius; y++) {
                 var nearestIntPos = new Vector3(nearestX + x, nearestY + y, 1f);
                 var p = Physics2D.OverlapCircleAll((Vector2) nearestIntPos, 0.1f)
                         .Where( c => c.gameObject.tag == "Mermaidwater")
@@ -129,39 +134,67 @@ public class PlayerClassMermaid : PlayerClass {
     }
 
     bool secondaryWinding;
-    float timeHeld;
-    const float maxTimeHeld = 2;
+    float fishDistance;
     GameObject currentFish;
-    float maxForce = 3500f;
+    Vector2 currentFishTarget;
+    bool flyingfish;
 
     void ReleaseFish() {
+        // FishFlickerDispose();
+        flyingfish = true;
+        currentFish.GetComponent<SpriteRenderer>().color = ClassColors.mermaidColor;
+        currentFishTarget = currentFish.transform.position;
+        Vector2 init = currentFish.transform.position = (transform.position + transform.TransformDirection(0f, 1f, 0f));
+        currentFish.GetComponent<Rigidbody2D>().drag = 0f;
+        currentFish.GetComponent<Rigidbody2D>().velocity = (currentFishTarget - init).normalized * 5;
         secondaryWinding = false;
         secondaryCooldown.Reset();
-
-        currentFish.GetComponent<Rigidbody2D>().AddForce(transform.up * (maxForce * (timeHeld / maxTimeHeld)));
     }
 
     public override void FireSecondary() {
         // we are cheating the contract by checking for fire release in Update().
         if (secondaryCooldown.Check()) {
             if (!secondaryWinding) {
-                currentFish = (GameObject) Instantiate(entities.mermaidFish, transform.position + transform.TransformDirection(new Vector3(0f, -1f, 0f)), transform.rotation);
-                timeHeld = 0;
+                currentFish = (GameObject) Instantiate(entities.mermaidFish, transform.position + transform.TransformDirection(new Vector3(0f, 1f, 0f)), transform.rotation);
+                fishDistance = 1;
                 secondaryWinding = true;
+                FishFlickerInit();
             } else {
-                timeHeld += Time.deltaTime;
+                // using mouse movement to move fish up/down from player transform
+                var mousey = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * 45;
+                fishDistance = Mathf.Clamp(mousey + fishDistance, 1f, 15f);
+                currentFish.transform.position = transform.position + transform.TransformDirection(new Vector3(0f, fishDistance, 0f));
                 currentFish.transform.rotation = transform.rotation;
-                currentFish.transform.position = transform.position + transform.TransformDirection(new Vector3(0f, -1f, 0f));
-                currentFish.GetComponent<SpriteRenderer>().color = Color.Lerp(ClassColors.mermaidColor * new Color(1f, 1f, 1f, 0.2f),
-                        ClassColors.mermaidColor,
-                        timeHeld / maxTimeHeld);
-
-                if (timeHeld >= maxTimeHeld) {
-                    ReleaseFish();
-                }
+                FishFlickerUpdate();
             }
         }
     }
+
+
+    int fishFramesSinceLastChange;
+    bool fishRotationBase;
+
+    public void FishFlickerInit() {
+        fishFramesSinceLastChange = 0;
+        fishRotationBase = true;
+    }
+
+    void FishFlickerDispose() {
+        fishFramesSinceLastChange = 0;
+        fishRotationBase = false;
+    }
+
+    void FishFlickerUpdate() {
+        // we want to rotate colors every 2 frames
+        // rather than 1, for a mellower flicker effect
+        fishFramesSinceLastChange++;
+        if (fishFramesSinceLastChange == 2) {
+            fishFramesSinceLastChange = 0;
+            fishRotationBase = !fishRotationBase;
+            currentFish.GetComponent<SpriteRenderer>().color = fishRotationBase ? ClassColors.mermaidColor : Color.black;
+        }
+    }
+
 
     public override void FireTertiary() {
         if (spcRepeatGuard.Check()) {
