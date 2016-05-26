@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum ParticleType {
+    effects,
+    playerWeapon,
+    enemyWeapon,
+    mermaidWater
+};
+
 public class ParticleController : MonoBehaviour {
 
     // possible types of particles
     // trying to keep it general.
     // potion lord had convoluted particle types.
-    public enum ParticleType { effects, playerWeapon, enemyWeapon };
 
     public ParticleType particleType;
 

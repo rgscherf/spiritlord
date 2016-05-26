@@ -70,7 +70,7 @@ public class PlayerClassChefFireTertiary : MonoBehaviour {
         for (int i = 0; i < explosionParticles; i++) {
             var r = (GameObject) Instantiate(entities.particle, transform.position, Quaternion.identity);
             var rp = r.GetComponent<ParticleController>();
-            rp.Init( ParticleController.ParticleType.effects
+            rp.Init( ParticleType.effects
                      , true
                      , spr.color
                      , 0.5f

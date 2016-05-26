@@ -30,7 +30,7 @@ public class PlayerClassChefFirePrimary : MonoBehaviour {
             var r = (GameObject) Instantiate(entities.particle, transform.position + rigid, Quaternion.identity);
             r.transform.position += (Vector3) Random.insideUnitCircle * puddleDiameter;
             var rp = r.GetComponent<ParticleController>();
-            rp.Init( ParticleController.ParticleType.effects
+            rp.Init( ParticleType.effects
                      , true
                      , GetComponent<SpriteRenderer>().color
                      , Random.Range(0.12f, 0.4f)

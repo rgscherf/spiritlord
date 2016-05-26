@@ -6,10 +6,12 @@ public class PlayerController : Actor {
 
     public override Color BaseColor {get; set;}
     public Entities entities;
-    PlayerClass currentClass;
-    float playerSpeed;
+    public PlayerClass currentClass;
     float movingV;
     float movingH;
+
+    public bool BlockEnemyPathfinding {get; set;}
+    bool enablePathfindingOnClassSwitch;
 
     void Awake() {
         entities = GameObject.Find("GameController").GetComponent<Entities>();
@@ -21,6 +23,7 @@ public class PlayerController : Actor {
     void Start() {
         // PlayerClass startingClass = gameObject.AddComponent<Mermaid>();
         PlayerClass startingClass = gameObject.AddComponent<PlayerClassChef>();
+        currentClass = startingClass;
         SwapClass(startingClass);
 
         BaseColor = Color.white;
@@ -65,15 +68,18 @@ public class PlayerController : Actor {
         var vmove = transform.up * v;
         var hmove = transform.right * h;
         var combinedMove = vmove.normalized + hmove.normalized;
-        GetComponent<Rigidbody2D>().AddForce(combinedMove * playerSpeed * Time.deltaTime);
+        GetComponent<Rigidbody2D>().AddForce(combinedMove * currentClass.PlayerSpeed * Time.deltaTime);
     }
 
     void SwapClass(PlayerClass newClass) {
+        currentClass.ClassSwitchCleanup();
         currentClass = newClass;
-        playerSpeed = currentClass.PlayerSpeed;
         GetComponent<SpriteRenderer>().sprite = currentClass.ClassSprite;
         BaseColor = currentClass.ClassColor;
         GetComponent<SpriteRenderer>().color = currentClass.ClassColor;
+        if (BlockEnemyPathfinding && enablePathfindingOnClassSwitch) {
+            BlockEnemyPathfinding = false;
+        }
     }
 
     public override void BaseUpdate() {
@@ -82,5 +88,10 @@ public class PlayerController : Actor {
     public override void BaseStart() {
         EntityStart();
         healthController.Init(6);
+    }
+
+    public void SetEnemyPathfinding(bool pathfindingState, bool enableOnClassSwitch) {
+        BlockEnemyPathfinding = pathfindingState;
+        enablePathfindingOnClassSwitch = enableOnClassSwitch;
     }
 }

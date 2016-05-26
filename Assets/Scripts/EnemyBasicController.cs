@@ -31,6 +31,10 @@ public class EnemyBasicController : Actor {
             CheckPathfindingActivation();
             return;
         }
+        if (playerTransform.gameObject.GetComponent<PlayerController>().BlockEnemyPathfinding) {
+            GetComponent<PolyNavAgent>().Stop();
+            return;
+        }
         var targetPos = GetTarget();
         GetComponent<PolyNavAgent>().SetDestination(targetPos);
     }

@@ -4,6 +4,7 @@
 
     public Timer(float t, bool startOffCooldown = false) {
         timer = t;
+        timerCurrent = 0f;
         if (startOffCooldown) {
             timerCurrent = timer + 10f;
         }

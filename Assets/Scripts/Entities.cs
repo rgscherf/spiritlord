@@ -17,7 +17,9 @@ public class Entities : MonoBehaviour {
     public GameObject chefFireTertiary;
 
     public Sprite mermaidSprite;
+    public Sprite mermaidUnderwaterSprite;
     public GameObject mermaidTrident;
+
 
     public static Vector2 OutwardExplosionVector(Vector2 explosionSource, Vector2 explodedEntityPosition, float blastForce) {
         var dir = (explodedEntityPosition - explosionSource).normalized;

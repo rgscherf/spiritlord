@@ -24,6 +24,7 @@ public class PlayerClassChef: PlayerClass {
     public override Color ClassColor {get { return _baseColor; }}
     public override void CallBaseStart() { BaseStart(); }
     public override void CallBaseUpdate() { BaseUpdate(); }
+    public override void ClassSwitchCleanup() {}
 
     GameObject MakeProjectile(GameObject proj) {
         return (GameObject) Instantiate(proj, transform.position + transform.up, transform.rotation);

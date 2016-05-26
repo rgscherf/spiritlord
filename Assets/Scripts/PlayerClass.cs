@@ -9,6 +9,7 @@ public abstract class PlayerClass : MonoBehaviour {
     public abstract void FireTertiary();
     public abstract void CallBaseStart(); // call this at END of Start()
     public abstract void CallBaseUpdate(); // call this at BEGINNING of Update()
+    public abstract void ClassSwitchCleanup();
 
     protected Timer primaryCooldown;
     protected Timer secondaryCooldown;
@@ -28,5 +29,9 @@ public abstract class PlayerClass : MonoBehaviour {
         primaryCooldown.Tick(Time.deltaTime);
         secondaryCooldown.Tick(Time.deltaTime);
         tertiaryCooldown.Tick(Time.deltaTime);
+    }
+
+    protected static void BlockEnemyPathing(bool v) {
+        GameObject.Find("Player").GetComponent<PlayerController>().SetEnemyPathfinding(v, true);
     }
 }

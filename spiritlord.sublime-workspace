@@ -4,6 +4,106 @@
 		"selected_items":
 		[
 			[
+				"water",
+				"waterDropLifetime"
+			],
+			[
+				"Class",
+				"ClassColors	ClassColors"
+			],
+			[
+				"mer",
+				"mermaidWater	(ParticleController.cs)"
+			],
+			[
+				"Particl",
+				"ParticleType	(ParticleController.cs)"
+			],
+			[
+				"tertia",
+				"tertiaryCooldownAmt"
+			],
+			[
+				"terti",
+				"tertiaryCooldown.Reset"
+			],
+			[
+				"ter",
+				"tertiaryCooldown.Check"
+			],
+			[
+				"Under",
+				"UnderwaterEnable"
+			],
+			[
+				"under",
+				"underwaterPressCooldown"
+			],
+			[
+				"del",
+				"deltaTime	float { get; }"
+			],
+			[
+				"un",
+				"underwater"
+			],
+			[
+				"_base",
+				"_baseSpeed"
+			],
+			[
+				"_bas",
+				"_baseSpeed"
+			],
+			[
+				"class",
+				"ClassSwitchCleanup()	void"
+			],
+			[
+				"ClassS",
+				"ClassSwitchCleanup	(PlayerClassMermaid.cs)"
+			],
+			[
+				"underw",
+				"underwater	bool"
+			],
+			[
+				"enable",
+				"enableOnClassSwitch"
+			],
+			[
+				"path",
+				"pathfindingState"
+			],
+			[
+				"Block",
+				"BlockEnemyPathfinding	(PlayerClassMermaid.cs)"
+			],
+			[
+				"underwat",
+				"underwaterSprite"
+			],
+			[
+				"tick",
+				"Tick(float dt)	void"
+			],
+			[
+				"underwa",
+				"isUnderwater	bool"
+			],
+			[
+				"CallBa",
+				"CallBaseUpdate()	void"
+			],
+			[
+				"primary",
+				"primaryCooldown	Timer"
+			],
+			[
+				"eu",
+				"EulerAngles(Vector3 euler)	Quaternion"
+			],
+			[
 				"SpriteRenderer",
 				"SpriteRenderer>().color	(PlayerController.cs)"
 			],
@@ -34,14 +134,6 @@
 			[
 				"primaryCoo",
 				"primaryCooldownAmt"
-			],
-			[
-				"tick",
-				"TickCheck(float dt)	bool"
-			],
-			[
-				"Class",
-				"ClassColor"
 			],
 			[
 				"En",
@@ -92,10 +184,6 @@
 				"AddForce(Vector2 direction)	void"
 			],
 			[
-				"terti",
-				"tertiaryCooldownAmt"
-			],
-			[
 				"seonc",
 				"secondaryCooldownAmt"
 			],
@@ -110,10 +198,6 @@
 			[
 				"look",
 				"LookAt(Transform target, Vector3 worldUp)	void"
-			],
-			[
-				"primary",
-				"primaryThrowVelocity"
 			],
 			[
 				"Add",
@@ -208,10 +292,6 @@
 				"Physics2D	Physics2D"
 			],
 			[
-				"tertia",
-				"tertiaryCooldown"
-			],
-			[
 				"primar",
 				"primaryCooldown"
 			],
@@ -226,10 +306,6 @@
 			[
 				"cook",
 				"cookPrimaryFireProjectile	GameObject"
-			],
-			[
-				"class",
-				"classSprite"
 			],
 			[
 				"crea",
@@ -421,13 +497,21 @@
 	},
 	"file_history":
 	[
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Timer.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChef.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/EnemyBasicController.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClass.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerController.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Actor.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassMermaidTrident.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Entities.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassMermaid.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/spiritlord.sublime-project",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Prefabs/PlayerClassChefFirePrimary.prefab",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassMermaid.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassFisherman.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Actor.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerController.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Timer.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassChef.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClass.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/ClassColors.cs",
@@ -489,6 +573,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"underwaterPressCooldown",
+			"PlayerSpeed",
+			"playerSpeed",
+			"PlayerSpeed",
+			"playerSpeed",
+			"SetEnemyPathfinding",
+			"isUnderwater",
 			"0",
 			"Color",
 			"color",
@@ -586,7 +677,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.652506963788,
 			1.0
 		],
 		"rows":
@@ -625,19 +716,63 @@
 		"selected_items":
 		[
 			[
+				"particl",
+				"Assets/Scripts/ParticleController.cs"
+			],
+			[
+				"trident",
+				"Assets/Scripts/PlayerClassMermaidTrident.cs"
+			],
+			[
+				"timer",
+				"Assets/Scripts/Timer.cs"
+			],
+			[
+				"merma",
+				"Assets/Scripts/PlayerClassMermaid.cs"
+			],
+			[
 				"playercon",
 				"Assets/Scripts/PlayerController.cs"
 			],
 			[
-				"mermaid",
-				"Assets/Scripts/Class Scripts/PlayerClassMermaid.cs"
+				"actor",
+				"Assets/Scripts/Actor.cs"
+			],
+			[
+				"playerch",
+				"Assets/Scripts/PlayerClassChef.cs"
+			],
+			[
+				"playercla",
+				"Assets/Scripts/PlayerClass.cs"
 			],
 			[
 				"playerclass",
-				"Assets/Scripts/Class Scripts/PlayerClassMermaid.cs"
+				"Assets/Scripts/PlayerClass.cs"
 			],
 			[
-				"merma",
+				"entities",
+				"Assets/Scripts/Entities.cs"
+			],
+			[
+				"player",
+				"Assets/Scripts/PlayerClass.cs"
+			],
+			[
+				"enem",
+				"Assets/Scripts/EnemyBasicController.cs"
+			],
+			[
+				"chefpri",
+				"Assets/Scripts/PlayerClassChefFirePrimary.cs"
+			],
+			[
+				"chef",
+				"Assets/Prefabs/PlayerClassChefFirePrimary.prefab"
+			],
+			[
+				"mermaid",
 				"Assets/Scripts/Class Scripts/PlayerClassMermaid.cs"
 			],
 			[
@@ -673,14 +808,6 @@
 				"Assets/Scripts/Class Scripts/PlayerClassChefFireTertiary.cs"
 			],
 			[
-				"chefpri",
-				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
-			],
-			[
-				"actor",
-				"Assets/Scripts/Actor.cs"
-			],
-			[
 				"fisher",
 				"Assets/Scripts/Class Scripts/PlayerClassFisherman.cs"
 			],
@@ -689,20 +816,12 @@
 				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
 			],
 			[
-				"playercla",
-				"Assets/Scripts/Class Scripts/PlayerClass.cs"
-			],
-			[
 				"playerfisher",
 				"Assets/Scripts/Class Scripts/PlayerClassFisherman.cs"
 			],
 			[
 				"particlecon",
 				"Assets/Scripts/ParticleController.cs"
-			],
-			[
-				"timer",
-				"Assets/Scripts/Timer.cs"
 			],
 			[
 				"primary",
@@ -721,24 +840,12 @@
 				"Assets/Scripts/ClassColors.cs"
 			],
 			[
-				"chef",
-				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
-			],
-			[
 				"",
 				"Assets/Scripts/Class Scripts/PlayerClassChefFirePrimary.cs"
 			],
 			[
-				"player",
-				"Assets/Scripts/PlayerController.cs"
-			],
-			[
 				"actorhea",
 				"Assets/Scripts/ActorHealth.cs"
-			],
-			[
-				"enem",
-				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
 			],
 			[
 				"moving",
@@ -813,10 +920,6 @@
 				"Assets/Scripts/PlayerClassChefFireTertiary.cs"
 			],
 			[
-				"entities",
-				"Assets/Scripts/Entities.cs"
-			],
-			[
 				"entite",
 				"Assets/Scripts/Entities.cs"
 			],
@@ -827,14 +930,6 @@
 			[
 				"basic",
 				"Assets/Scripts/EnemyBasicController.cs"
-			],
-			[
-				"playerch",
-				"Assets/Scripts/PlayerClassChef.cs"
-			],
-			[
-				"particl",
-				"Assets/Scripts/ParticleController.cs"
 			],
 			[
 				"chec",
@@ -918,7 +1013,7 @@
 		"_vintageous_last_buffer_search": "method",
 		"_vintageous_last_buffer_search_command": "vi_slash",
 		"_vintageous_last_char_search_command": "vi_f",
-		"_vintageous_last_character_search": "(",
+		"_vintageous_last_character_search": ",",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{
