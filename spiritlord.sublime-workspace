@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"getcom",
+				"GetComponent<T>()	T"
+			],
+			[
+				"curr",
+				"currentFish"
+			],
+			[
+				"curre",
+				"currentFishTarget"
+			],
+			[
+				"Vec",
+				"Vector2"
+			],
+			[
+				"force",
+				"ForceMode2D	ForceMode2D"
+			],
+			[
+				"move",
+				"MovePosition(Vector2 position)	void"
+			],
+			[
+				"transformd",
+				"TransformDirection(float x, float y, float z)	Vector3"
+			],
+			[
+				"Valu",
+				"value(GameObject gameObject, Vector3 from, Vector3 to, float time)	LTDescr"
+			],
+			[
+				"fishfli",
+				"FishFlickerUpdate()	void"
+			],
+			[
+				"Fishfli",
+				"FishFlickerInit"
+			],
+			[
+				"timeH",
+				"timeHeld	float"
+			],
+			[
+				"cl",
+				"Clamp(float value, float min, float max)	float"
+			],
+			[
+				"cursor",
+				"Cursor	Cursor"
+			],
+			[
+				"Cursorlo",
+				"CursorLockMode.Locked	(PlayerController.cs)"
+			],
+			[
+				"scr",
+				"ScreenToWorldPoint(Vector3 position)	Vector3"
+			],
+			[
+				"Curcl",
+				"CursorLockMode	CursorLockMode"
+			],
+			[
 				"scal",
 				"scale(GameObject gameObject, Vector3 to, float time)	LTDescr"
 			],
@@ -450,30 +514,6 @@
 			[
 				"Getcom",
 				"GetComponent<T>()	T"
-			],
-			[
-				"FindPl",
-				"FindPlayer()	void"
-			],
-			[
-				"Get",
-				"GetComponent<T>()	T"
-			],
-			[
-				"Unity",
-				"UnityEngine	(PlayerController.cs)"
-			],
-			[
-				"getcom",
-				"GetComponent<T>()	T"
-			],
-			[
-				"GetA",
-				"GetAxisRaw(string axisName)	float"
-			],
-			[
-				"serial",
-				"serializers"
 			]
 		]
 	},
@@ -553,6 +593,7 @@
 	},
 	"file_history":
 	[
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/ParticleController.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Entities.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChefFirePrimary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChefFireTertiary.cs",
@@ -617,7 +658,7 @@
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
@@ -631,6 +672,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"transform",
+			"Vector3",
+			"1",
+			"flickerTimer",
+			"flickering",
+			"rotationOnBase",
+			"framesSinceLastChange",
+			"timeHeld",
+			"cursor",
 			"CheckUnderwaterProximity",
 			"3f",
 			"1f",
@@ -771,6 +821,18 @@
 		"selected_items":
 		[
 			[
+				"classcol",
+				"Assets/Scripts/ClassColors.cs"
+			],
+			[
+				"particle",
+				"Assets/Scripts/ParticleController.cs"
+			],
+			[
+				"mermaid",
+				"Assets/Scripts/PlayerClassMermaid.cs"
+			],
+			[
 				"chef",
 				"Assets/Scripts/PlayerClassChef.cs"
 			],
@@ -789,10 +851,6 @@
 			[
 				"primary",
 				"Assets/Scripts/PlayerClassChefFirePrimary.cs"
-			],
-			[
-				"particle",
-				"Assets/Scripts/ParticleController.cs"
 			],
 			[
 				"merma",
@@ -841,10 +899,6 @@
 			[
 				"chefpri",
 				"Assets/Scripts/PlayerClassChefFirePrimary.cs"
-			],
-			[
-				"mermaid",
-				"Assets/Scripts/Class Scripts/PlayerClassMermaid.cs"
 			],
 			[
 				"colors",
@@ -1068,7 +1122,7 @@
 		"_vintageous_last_buffer_search": "method",
 		"_vintageous_last_buffer_search_command": "vi_slash",
 		"_vintageous_last_char_search_command": "vi_f",
-		"_vintageous_last_character_search": "(",
+		"_vintageous_last_character_search": "&",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{

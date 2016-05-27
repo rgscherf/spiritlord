@@ -82,7 +82,7 @@ public class PlayerClassMermaid : PlayerClass {
             }
         }
 
-        if (droppingWater) { DropWater(1); }
+        if (droppingWater) { DropWater(gameObject, 1); }
 
         if (secondaryWinding && Input.GetAxisRaw("FireSecondary") == 0f) {
             ReleaseFish();
@@ -90,7 +90,8 @@ public class PlayerClassMermaid : PlayerClass {
 
         if (flyingfish && Vector3.Distance(currentFishTarget, currentFish.transform.position) < 5f) {
             flyingfish = false;
-            currentFish.GetComponent<Rigidbody2D>().drag = 5f;
+            currentFish.GetComponent<Rigidbody2D>().drag = 10f;
+            DropWater(currentFish, 2);
         }
 
         CallBaseUpdate();
@@ -104,9 +105,9 @@ public class PlayerClassMermaid : PlayerClass {
         return w == 0;
     }
 
-    void DropWater(int radius) {
-        var nearestX = (int) Mathf.Round(transform.position.x);
-        var nearestY = (int) Mathf.Round(transform.position.y);
+    void DropWater(GameObject obj, int radius) {
+        var nearestX = (int) Mathf.Round(obj.transform.position.x);
+        var nearestY = (int) Mathf.Round(obj.transform.position.y);
         for (var x = -radius; x <= radius; x++) {
             for (var y = -radius; y <= radius; y++) {
                 var nearestIntPos = new Vector3(nearestX + x, nearestY + y, 1f);
@@ -146,7 +147,8 @@ public class PlayerClassMermaid : PlayerClass {
         currentFishTarget = currentFish.transform.position;
         Vector2 init = currentFish.transform.position = (transform.position + transform.TransformDirection(0f, 1f, 0f));
         currentFish.GetComponent<Rigidbody2D>().drag = 0f;
-        currentFish.GetComponent<Rigidbody2D>().velocity = (currentFishTarget - init).normalized * 5;
+        currentFish.GetComponent<Rigidbody2D>().AddForce((currentFishTarget - init).normalized * 2000);
+        currentFish.GetComponent<Rigidbody2D>().AddTorque(40f);
         secondaryWinding = false;
         secondaryCooldown.Reset();
     }
