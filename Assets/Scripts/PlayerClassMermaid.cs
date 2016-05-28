@@ -34,7 +34,7 @@ public class PlayerClassMermaid : PlayerClass {
     Color _baseColor;
     Sprite _baseSprite;
     bool _blockEnemyPathfinding;
-    float _baseSpeed = 2000f;
+    float _baseSpeed = 2300f;
     float _speedMult = 1f;
 
     public override float PlayerSpeed { get { return _baseSpeed * _speedMult; } }
@@ -51,6 +51,20 @@ public class PlayerClassMermaid : PlayerClass {
     bool droppingWater;
 
     const float coolDownBonusForEndingDiveEarly = 0.5f;
+
+    // fish rangefinder flickering controls
+    int fishFramesSinceLastChange;
+    bool fishRotationBase;
+
+    // fish rangefinder
+    bool secondaryWinding;
+    float fishDistance;
+    GameObject currentFishRangefinder;
+    Vector2 currentFishTarget;
+
+    // fish on the ground
+    bool fishReleased;
+    GameObject currentFishReleased;
 
     void Awake() {
         entities = GameObject.Find("GameController").GetComponent<Entities>();
@@ -84,14 +98,8 @@ public class PlayerClassMermaid : PlayerClass {
 
         if (droppingWater) { DropWater(gameObject, 1); }
 
-        if (secondaryWinding && Input.GetAxisRaw("FireSecondary") == 0f) {
+        if (secondaryFireStage == SecondaryStage.windingFish && Input.GetAxisRaw("FireSecondary") == 0f) {
             ReleaseFish();
-        }
-
-        if (flyingfish && Vector3.Distance(currentFishTarget, currentFish.transform.position) < 5f) {
-            flyingfish = false;
-            currentFish.GetComponent<Rigidbody2D>().drag = 10f;
-            DropWater(currentFish, 2);
         }
 
         CallBaseUpdate();
@@ -105,7 +113,7 @@ public class PlayerClassMermaid : PlayerClass {
         return w == 0;
     }
 
-    void DropWater(GameObject obj, int radius) {
+    public void DropWater(GameObject obj, int radius) {
         var nearestX = (int) Mathf.Round(obj.transform.position.x);
         var nearestY = (int) Mathf.Round(obj.transform.position.y);
         for (var x = -radius; x <= radius; x++) {
@@ -118,7 +126,8 @@ public class PlayerClassMermaid : PlayerClass {
                 if (p != 0 ) { continue; }
                 var w = (GameObject) Instantiate(entities.mermaidWaterSprite, nearestIntPos, Quaternion.identity);
                 w.GetComponent<SpriteRenderer>().color = ClassColors.mermaidColor * new Color(1f, 1f, 1f, 0.5f);
-                Object.Destroy(w, 6f);
+                float waterTime = Random.Range(5.8f, 6.2f);
+                Object.Destroy(w, waterTime);
             }
         }
     }
@@ -134,47 +143,67 @@ public class PlayerClassMermaid : PlayerClass {
         }
     }
 
-    bool secondaryWinding;
-    float fishDistance;
-    GameObject currentFish;
-    Vector2 currentFishTarget;
-    bool flyingfish;
+
+    enum SecondaryStage {notWinding, windingFish, releasedFish};
 
     void ReleaseFish() {
-        // FishFlickerDispose();
-        flyingfish = true;
-        currentFish.GetComponent<SpriteRenderer>().color = ClassColors.mermaidColor;
-        currentFishTarget = currentFish.transform.position;
-        Vector2 init = currentFish.transform.position = (transform.position + transform.TransformDirection(0f, 1f, 0f));
-        currentFish.GetComponent<Rigidbody2D>().drag = 0f;
-        currentFish.GetComponent<Rigidbody2D>().AddForce((currentFishTarget - init).normalized * 2000);
-        currentFish.GetComponent<Rigidbody2D>().AddTorque(40f);
-        secondaryWinding = false;
-        secondaryCooldown.Reset();
+        // spawn flying fish object
+        Vector2 init = (transform.position + transform.TransformDirection(0f, 1f, 0f));
+        var currentFishReleased = (GameObject) Instantiate(entities.mermaidFishFlying, init, transform.rotation);
+        currentFishTarget = currentFishRangefinder.transform.position;
+        currentFishReleased.GetComponent<PlayerClassMermaidFish>().Init(currentFishTarget);
+
+        // destroy fish targeter
+        Object.Destroy(currentFishRangefinder);
+
+        // reset cooldowns
+        secondaryFireStage = SecondaryStage.releasedFish;
+
+        // flag moving to released mode
+        fishReleased = true;
     }
+
+    SecondaryStage secondaryFireStage;
 
     public override void FireSecondary() {
         // we are cheating the contract by checking for fire release in Update().
         if (secondaryCooldown.Check()) {
-            if (!secondaryWinding) {
-                currentFish = (GameObject) Instantiate(entities.mermaidFish, transform.position + transform.TransformDirection(new Vector3(0f, 1f, 0f)), transform.rotation);
-                fishDistance = 1;
-                secondaryWinding = true;
-                FishFlickerInit();
+            switch (secondaryFireStage) {
+                case SecondaryStage.notWinding:
+                    currentFishRangefinder = (GameObject) Instantiate(entities.mermaidFish, transform.position + transform.TransformDirection(new Vector3(0f, 1f, 0f)), transform.rotation);
+                    fishDistance = 1;
+                    secondaryFireStage = SecondaryStage.windingFish;
+                    FishFlickerInit();
+                    break;
+                case SecondaryStage.windingFish:
+                    currentFishRangefinder = (GameObject) Instantiate(entities.mermaidFish, transform.position + transform.TransformDirection(new Vector3(0f, 1f, 0f)), transform.rotation);
+                    fishDistance = 1;
+                    FishFlickerInit();
+                    break;
+                case SecondaryStage.releasedFish:
+                    MoveToFish();
+                    secondaryCooldown.Reset();
+                    break;
             } else {
-                // using mouse movement to move fish up/down from player transform
-                var mousey = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * 45;
-                fishDistance = Mathf.Clamp(mousey + fishDistance, 1f, 15f);
-                currentFish.transform.position = transform.position + transform.TransformDirection(new Vector3(0f, fishDistance, 0f));
-                currentFish.transform.rotation = transform.rotation;
-                FishFlickerUpdate();
+                secondaryFireStage = SecondaryStage.notWinding;
             }
+            // if (!secondaryWinding) {
+            //     currentFishRangefinder = (GameObject) Instantiate(entities.mermaidFish, transform.position + transform.TransformDirection(new Vector3(0f, 1f, 0f)), transform.rotation);
+            //     fishDistance = 1;
+            //     secondaryWinding = true;
+            //     FishFlickerInit();
+            // } else {
+            //     // using mouse movement to move fish up/down from player transform
+            //     var mousey = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * 45;
+            //     fishDistance = Mathf.Clamp(mousey + fishDistance, 1f, 20f);
+            //     currentFishRangefinder.transform.position = transform.position + transform.TransformDirection(new Vector3(0f, fishDistance, 0f));
+            //     currentFishRangefinder.transform.rotation = transform.rotation;
+            //     FishFlickerUpdate();
+            // }
         }
     }
 
-
-    int fishFramesSinceLastChange;
-    bool fishRotationBase;
+    void MoveToFish()
 
     public void FishFlickerInit() {
         fishFramesSinceLastChange = 0;
@@ -193,7 +222,7 @@ public class PlayerClassMermaid : PlayerClass {
         if (fishFramesSinceLastChange == 2) {
             fishFramesSinceLastChange = 0;
             fishRotationBase = !fishRotationBase;
-            currentFish.GetComponent<SpriteRenderer>().color = fishRotationBase ? ClassColors.mermaidColor : Color.black;
+            currentFishRangefinder.GetComponent<SpriteRenderer>().color = fishRotationBase ? ClassColors.mermaidColor : Color.black;
         }
     }
 

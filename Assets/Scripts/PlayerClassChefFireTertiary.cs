@@ -56,7 +56,8 @@ public class PlayerClassChefFireTertiary : MonoBehaviour {
             var colls = Physics2D.OverlapCircleAll(transform.position, explodeRadius);
             foreach (var c in colls) {
                 if (c.tag == "Enemy" || c.tag == "Player") {
-                    var xplvector = Entities.OutwardExplosionVector(transform.position, c.transform.position, explodeForce);
+                    var localExplodeForce = c.tag == "Player" ? explodeForce : explodeForce * .75f;
+                    var xplvector = Entities.OutwardExplosionVector(transform.position, c.transform.position, localExplodeForce);
                     c.gameObject.GetComponent<Rigidbody2D>().AddForce(xplvector);
                 }
             }

@@ -19,6 +19,7 @@ public class Entities : MonoBehaviour {
     public Sprite mermaidSprite;
     public Sprite mermaidUnderwaterSprite;
     public GameObject mermaidFish;
+    public GameObject mermaidFishFlying;
     public GameObject mermaidWaterSprite;
     public GameObject mermaidTrident;
 
