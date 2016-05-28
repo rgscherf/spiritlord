@@ -4,6 +4,98 @@
 		"selected_items":
 		[
 			[
+				"collis",
+				"Collision2D	Collision2D"
+			],
+			[
+				"secondarys",
+				"secondaryFireStage"
+			],
+			[
+				"Reset",
+				"ResetSecondaryCooldown()	void"
+			],
+			[
+				"Secon",
+				"secondaryCooldown	Timer"
+			],
+			[
+				"eas",
+				"setEase(LeanTweenType easeType)	LTDescr"
+			],
+			[
+				"re",
+				"ReceiveDamage(int d)	void"
+			],
+			[
+				"Secondary",
+				"SecondaryStage.movingToFish"
+			],
+			[
+				"tick",
+				"TickCheck(float dt)	bool"
+			],
+			[
+				"current",
+				"currentFishReleased"
+			],
+			[
+				"currentFish",
+				"currentFishReleased"
+			],
+			[
+				"Sec",
+				"SecondaryStage"
+			],
+			[
+				"move",
+				"move(GameObject gameObject, Vector2 to, float time)	LTDescr"
+			],
+			[
+				"secondary",
+				"secondaryFireStage"
+			],
+			[
+				"econdary",
+				"secondaryFireStage	SecondaryStage"
+			],
+			[
+				"released",
+				"releasedFish"
+			],
+			[
+				"secondar",
+				"secondaryStage"
+			],
+			[
+				"water",
+				"waterTime"
+			],
+			[
+				"gameO",
+				"gameObject"
+			],
+			[
+				"fra",
+				"fractionalDistance"
+			],
+			[
+				"add",
+				"AddTorque(float torque)	void"
+			],
+			[
+				"CheckDi",
+				"CheckDistance()	void"
+			],
+			[
+				"Getcom",
+				"GetComponent<T>()	T"
+			],
+			[
+				"Sprire",
+				"SpriteRenderer>().color	(PlayerClassMermaid.cs)"
+			],
+			[
 				"getcom",
 				"GetComponent<T>()	T"
 			],
@@ -22,10 +114,6 @@
 			[
 				"force",
 				"ForceMode2D	ForceMode2D"
-			],
-			[
-				"move",
-				"MovePosition(Vector2 position)	void"
 			],
 			[
 				"transformd",
@@ -88,14 +176,6 @@
 				"TransformDirection(Vector3 direction)	Vector3"
 			],
 			[
-				"gameO",
-				"GameObject	GameObject"
-			],
-			[
-				"secondar",
-				"secondaryWinding"
-			],
-			[
 				"secon",
 				"secondaryWinding	bool"
 			],
@@ -122,10 +202,6 @@
 			[
 				"Spawn",
 				"SpawnRandomWaterParticles(int n, float minForce, float maxForce)	void"
-			],
-			[
-				"water",
-				"waterDropLifetime"
 			],
 			[
 				"Class",
@@ -202,10 +278,6 @@
 			[
 				"underwat",
 				"underwaterSprite"
-			],
-			[
-				"tick",
-				"Tick(float dt)	void"
 			],
 			[
 				"underwa",
@@ -298,10 +370,6 @@
 			[
 				"invuln",
 				"invulnTimer"
-			],
-			[
-				"add",
-				"AddForce(Vector2 direction)	void"
 			],
 			[
 				"seonc",
@@ -446,74 +514,6 @@
 			[
 				"GetAxi",
 				"GetAxisRaw(string axisName)	float"
-			],
-			[
-				"insi",
-				"insideUnitCircle	Vector2 { get; }"
-			],
-			[
-				"inside",
-				"insideUnitCircle	Vector2 { get; }"
-			],
-			[
-				"check",
-				"checkIfInAir"
-			],
-			[
-				"Make",
-				"MakeJumping()	void"
-			],
-			[
-				"GetCOm",
-				"GetComponent<T>()	T"
-			],
-			[
-				"gameObject",
-				"GameObject	GameObject"
-			],
-			[
-				"loc",
-				"localScale	Vector3 { get; set; }"
-			],
-			[
-				"Randominsi",
-				"Random.insideUnitSphere"
-			],
-			[
-				"sphere",
-				"insideUnitSphere	Vector3 { get; }"
-			],
-			[
-				"log",
-				"Log(object message)	void"
-			],
-			[
-				"dodge",
-				"DodgeType	DodgeType"
-			],
-			[
-				"Dodge",
-				"DodgeType"
-			],
-			[
-				"Dod",
-				"DodgeType"
-			],
-			[
-				"dog",
-				"DodgeType	DodgeType"
-			],
-			[
-				"dodg",
-				"dodgeVector"
-			],
-			[
-				"go",
-				"gotDodgeInput"
-			],
-			[
-				"Getcom",
-				"GetComponent<T>()	T"
 			]
 		]
 	},
@@ -595,8 +595,8 @@
 	[
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/ParticleController.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Entities.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChefFirePrimary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChefFireTertiary.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChefFirePrimary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Timer.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChef.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/EnemyBasicController.cs",
@@ -658,7 +658,7 @@
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -672,6 +672,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"SecondaryState",
+			"case",
+			"secondaryStage",
+			"f",
+			"currentFish",
+			"p",
+			"AtDestination",
+			"var",
+			"8",
+			"tweenoutward",
+			"CheckDistance",
 			"transform",
 			"Vector3",
 			"1",
@@ -821,6 +832,46 @@
 		"selected_items":
 		[
 			[
+				"enemy",
+				"Assets/Scripts/EnemyBasicController.cs"
+			],
+			[
+				"trident",
+				"Assets/Scripts/PlayerClassMermaidTrident.cs"
+			],
+			[
+				"mermaidfi",
+				"Assets/Scripts/PlayerClassMermaidFish.cs"
+			],
+			[
+				"mermaid",
+				"Assets/Scripts/PlayerClassMermaid.cs"
+			],
+			[
+				"fish",
+				"Assets/Scripts/PlayerClassMermaidFish.cs"
+			],
+			[
+				"partic",
+				"Assets/Scripts/ParticleController.cs"
+			],
+			[
+				"entities",
+				"Assets/Scripts/Entities.cs"
+			],
+			[
+				"playerclassfis",
+				"Assets/Scripts/PlayerClassMermaidFish.cs"
+			],
+			[
+				"mer",
+				"Assets/Scripts/PlayerClassMermaid.cs"
+			],
+			[
+				"tertia",
+				"Assets/Scripts/PlayerClassChefFireTertiary.cs"
+			],
+			[
 				"classcol",
 				"Assets/Scripts/ClassColors.cs"
 			],
@@ -829,24 +880,12 @@
 				"Assets/Scripts/ParticleController.cs"
 			],
 			[
-				"mermaid",
-				"Assets/Scripts/PlayerClassMermaid.cs"
-			],
-			[
 				"chef",
 				"Assets/Scripts/PlayerClassChef.cs"
 			],
 			[
-				"tertia",
-				"Assets/Scripts/PlayerClassChefFireTertiary.cs"
-			],
-			[
 				"basic",
 				"Assets/Scripts/EnemyBasicController.cs"
-			],
-			[
-				"entities",
-				"Assets/Scripts/Entities.cs"
 			],
 			[
 				"primary",
@@ -859,10 +898,6 @@
 			[
 				"particl",
 				"Assets/Scripts/ParticleController.cs"
-			],
-			[
-				"trident",
-				"Assets/Scripts/PlayerClassMermaidTrident.cs"
 			],
 			[
 				"timer",
@@ -911,10 +946,6 @@
 			[
 				"entii",
 				"Assets/Scripts/Entities.cs"
-			],
-			[
-				"fish",
-				"Assets/Scripts/Class Scripts/PlayerClassFisherman.cs"
 			],
 			[
 				"classche",
@@ -977,10 +1008,6 @@
 				"Assets/Scripts/MovingEntity.cs"
 			],
 			[
-				"enemy",
-				"Assets/Scripts/Enemy Scripts/EnemyBasicController.cs"
-			],
-			[
 				"roll",
 				"Assets/Scripts/RollingController.cs"
 			],
@@ -1022,10 +1049,6 @@
 			],
 			[
 				"par",
-				"Assets/Scripts/ParticleController.cs"
-			],
-			[
-				"partic",
 				"Assets/Scripts/ParticleController.cs"
 			],
 			[
@@ -1119,14 +1142,14 @@
 	},
 	"settings":
 	{
-		"_vintageous_last_buffer_search": "method",
+		"_vintageous_last_buffer_search": "flying",
 		"_vintageous_last_buffer_search_command": "vi_slash",
 		"_vintageous_last_char_search_command": "vi_f",
-		"_vintageous_last_character_search": "&",
+		"_vintageous_last_character_search": ")",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{
-			"_cmdline_cd": "/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts"
+			"_cmdline_cd": "/Applications/Sublime Text.app/Contents/MacOS"
 		}
 	},
 	"show_minimap": true,

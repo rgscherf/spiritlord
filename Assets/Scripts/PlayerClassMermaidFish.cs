@@ -11,11 +11,16 @@ public class PlayerClassMermaidFish : MonoBehaviour {
 
     Rigidbody2D rigid;
 
+    Timer deathTimer;
+
+    int explosionRadius = 4;
+    int explosionDamage = 4;
 
     void Awake() {
         GetComponent<SpriteRenderer>().color = ClassColors.mermaidColor;
         rigid = GetComponent<Rigidbody2D>();
         entities = GameObject.Find("GameController").GetComponent<Entities>();
+        deathTimer = new Timer(6f);
     }
 
     void Start() {
@@ -23,6 +28,10 @@ public class PlayerClassMermaidFish : MonoBehaviour {
     }
 
     void Update() {
+        if (deathTimer.TickCheck(Time.deltaTime)) {
+            Explode(true);
+        }
+
         flying = !AtDestination();
         if (flying) {
             rigid.drag = Vector2.Distance(target, transform.position) < 2f ? 10f : 0f ;
@@ -36,15 +45,29 @@ public class PlayerClassMermaidFish : MonoBehaviour {
         return Vector2.Distance(target, transform.position) < 0.3f;
     }
 
+    void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Geometry")) {
+            rigid.velocity = new Vector3(0f, 0f, 0f);
+        }
+    }
+
     void Land() {
         rigid.velocity = new Vector3(0f, 0f, 0f);
         flying = false;
         landed = true;
-        Explode();
     }
 
-    public void Explode() {
-        DropWater(gameObject, 4, true);
+    public void Explode(bool doDamage) {
+        DropWater(gameObject, explosionRadius, true);
+        if (doDamage) {
+            var colls = Physics2D.OverlapCircleAll(transform.position, (float) explosionRadius);
+            foreach (var c in colls) {
+                if (c.gameObject.tag == "Enemy") {
+                    c.gameObject.GetComponent<Actor>().ReceiveDamage(explosionDamage);
+                }
+            }
+        }
+        Object.Destroy(gameObject);
     }
 
     public void Init(Vector3 targ) {
@@ -55,7 +78,6 @@ public class PlayerClassMermaidFish : MonoBehaviour {
         rigid.angularDrag = 0f;
         rigid.AddForce((target - transform.position).normalized * 1500);
         rigid.AddTorque(10f);
-        Object.Destroy(gameObject, 6f);
     }
 
     void DropWater(GameObject obj, int radius, bool tweenOutward) {
@@ -82,9 +104,9 @@ public class PlayerClassMermaidFish : MonoBehaviour {
                     w = (GameObject) Instantiate(entities.mermaidWaterSprite, nearestIntPos, Quaternion.identity);
                 }
 
-                w.GetComponent<SpriteRenderer>().color = ClassColors.mermaidColor * new Color(1f, 1f, 1f, 0.5f);
-                float waterTime = Random.Range(5.8f, 6.2f);
-                Object.Destroy(w, waterTime);
+                w.GetComponent<SpriteRenderer>().color = ClassColors.mermaidColor * new Color(1f, 1f, 1f, 0.7f);
+                float waterTime = Random.Range(6f, 6.2f);
+                Object.Destroy(w, waterTime / 2);
             }
         }
     }
