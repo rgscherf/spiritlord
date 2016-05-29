@@ -7,26 +7,18 @@ public class PlayerClassMermaid : PlayerClass {
     // mermaid is a powerful hit-and-run attacker
     // with awesome mobility
 
-    // the fisherman is all about his fishing rod.
-    // at first, only primary fire has an effect.
-    // hold primary fire: cast line outward. then:
-    // primary fire: catch a fish which EXPLODES after delay
-    // secondary fire: catch a turnip, which returns to the player and gives health
-    // tertiary fire: swiftly reel YOURSELF toward the line, damaging enemies along the way
-
     // primary
-    // a quick lance stab
+    // a quick trident stab
 
     // secondary
-    // cast a line outward (hold to cast farther)
-    // when released, throw a lure which drops into 'water'
-    // from this state:
-    // press primary to pull up a fish, which shortly explodes
-    // press secondary to reel YOURSELF to the lure, causing damage along the way
+    // select a spot on which to throw a fish.
+    // after the fish has landed, press secondary again to
+    // reel YOURSELF to the fish. when  you reach it,
+    // the fish explodes causing damage in a wide area.
 
     // tertiary
     // drop 'water' particles behind yourself at all times.
-    // hold tertiary fire to move faster on water
+    // press tertiary fire to move faster on water
     // (promotes melee hit-and-run)
 
     Entities entities;
@@ -34,10 +26,12 @@ public class PlayerClassMermaid : PlayerClass {
     Color _baseColor;
     Sprite _baseSprite;
     bool _blockEnemyPathfinding;
-    float _baseSpeed = 2300f;
+    float _baseSpeed = 2600f;
     float _speedMult = 1f;
+    const int _classHealthMax = 25;
 
-    public override float PlayerSpeed { get { return _baseSpeed * _speedMult; } }
+    public override int ClassHealthMax { get { return _classHealthMax; } }
+    public override float ClassSpeed { get { return _baseSpeed * _speedMult; } }
     public override Sprite ClassSprite {get { return _baseSprite; }}
     public override Color ClassColor {get { return _baseColor; }}
     public override void CallBaseStart() { BaseStart(); }
@@ -72,7 +66,6 @@ public class PlayerClassMermaid : PlayerClass {
     Vector2 currentFishTarget;
 
     // fish on the ground
-    bool fishReleased;
     GameObject currentFishReleased;
 
     void Awake() {
@@ -133,7 +126,7 @@ public class PlayerClassMermaid : PlayerClass {
     }
 
     bool NotTouchingWater() {
-        var w = Physics2D.OverlapCircleAll(transform.position, 1f)
+        var w = Physics2D.OverlapCircleAll(transform.position, .75f)
                 .Where( c => c.gameObject.tag == "Mermaidwater")
                 .ToArray()
                 .Length;
@@ -153,7 +146,7 @@ public class PlayerClassMermaid : PlayerClass {
                 if (p != 0 ) { continue; }
                 var w = (GameObject) Instantiate(entities.mermaidWaterSprite, nearestIntPos, Quaternion.identity);
                 w.GetComponent<SpriteRenderer>().color = ClassColors.mermaidColor * new Color(1f, 1f, 1f, 0.5f);
-                float waterTime = Random.Range(6f, 6.2f);
+                float waterTime = Random.Range(8f, 8.1f);
                 Object.Destroy(w, waterTime);
             }
         }
@@ -183,8 +176,6 @@ public class PlayerClassMermaid : PlayerClass {
         // reset cooldowns
         secondaryFireStage = SecondaryStage.releasedFish;
 
-        // flag moving to released mode
-        fishReleased = true;
     }
 
     SecondaryStage secondaryFireStage;
@@ -208,7 +199,9 @@ public class PlayerClassMermaid : PlayerClass {
                     FishFlickerUpdate();
                     break;
                 case SecondaryStage.releasedFish:
-                    MoveToFish();
+                    if (currentFishReleased.GetComponent<PlayerClassMermaidFish>().landed) {
+                        MoveToFish();
+                    }
                     break;
             }
         }

@@ -68,7 +68,7 @@ public class PlayerController : Actor {
         var vmove = transform.up * v;
         var hmove = transform.right * h;
         var combinedMove = vmove.normalized + hmove.normalized;
-        GetComponent<Rigidbody2D>().AddForce(combinedMove * currentClass.PlayerSpeed * Time.deltaTime);
+        GetComponent<Rigidbody2D>().AddForce(combinedMove * currentClass.ClassSpeed * Time.deltaTime);
     }
 
     void SwapClass(PlayerClass newClass) {

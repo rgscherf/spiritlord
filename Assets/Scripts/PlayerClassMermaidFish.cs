@@ -6,7 +6,7 @@ public class PlayerClassMermaidFish : MonoBehaviour {
 
     Vector3 target;
     bool flying;
-    bool landed;
+    public bool landed;
     Entities entities;
 
     Rigidbody2D rigid;
@@ -105,7 +105,7 @@ public class PlayerClassMermaidFish : MonoBehaviour {
                 }
 
                 w.GetComponent<SpriteRenderer>().color = ClassColors.mermaidColor * new Color(1f, 1f, 1f, 0.7f);
-                float waterTime = Random.Range(6f, 6.2f);
+                float waterTime = Random.Range(8f, 8.1f);
                 Object.Destroy(w, waterTime / 2);
             }
         }

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
 public abstract class PlayerClass : MonoBehaviour {
-    public abstract float PlayerSpeed {get;}
+    public abstract int ClassHealthMax {get;}
+    public abstract float ClassSpeed {get;}
     public abstract Sprite ClassSprite {get;}
     public abstract Color ClassColor {get;}
     public abstract void FirePrimary();

@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"PlayerClassM",
+				"PlayerClassMermaidFish	PlayerClassMermaidFish"
+			],
+			[
+				"attack",
+				"attackCooldown"
+			],
+			[
+				"add",
+				"AddForce(Vector2 force)	void"
+			],
+			[
+				"attac",
+				"attackTimer"
+			],
+			[
+				"On",
+				"OnDestinationReached	OnDestinationReached"
+			],
+			[
 				"collis",
 				"Collision2D	Collision2D"
 			],
@@ -78,10 +98,6 @@
 			[
 				"fra",
 				"fractionalDistance"
-			],
-			[
-				"add",
-				"AddTorque(float torque)	void"
 			],
 			[
 				"CheckDi",
@@ -498,22 +514,6 @@
 			[
 				"crea",
 				"CreateInstance(string className)	ScriptableObject"
-			],
-			[
-				"mov",
-				"movingV"
-			],
-			[
-				"Vie",
-				"ViewportToWorldPoint(Vector3 position)	Vector3"
-			],
-			[
-				"Cam",
-				"Camera.main	(PlayerController.cs)"
-			],
-			[
-				"GetAxi",
-				"GetAxisRaw(string axisName)	float"
 			]
 		]
 	},
@@ -593,18 +593,18 @@
 	},
 	"file_history":
 	[
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChef.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/EnemyBasicController.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassMermaid.cs",
+		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerController.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/ParticleController.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Entities.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChefFireTertiary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChefFirePrimary.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Timer.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassChef.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/EnemyBasicController.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClass.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerController.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Actor.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassMermaidTrident.cs",
-		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/PlayerClassMermaid.cs",
 		"/Users/rgscherf/projects/unity/spiritlord/spiritlord.sublime-project",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Prefabs/PlayerClassChefFirePrimary.prefab",
 		"/Users/rgscherf/projects/unity/spiritlord/Assets/Scripts/Class Scripts/PlayerClassMermaid.cs",
@@ -672,6 +672,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"secRepeatGuard",
+			"playerTransform",
+			"DestinationReached",
+			"speed",
 			"SecondaryState",
 			"case",
 			"secondaryStage",
@@ -832,6 +836,42 @@
 		"selected_items":
 		[
 			[
+				"chec",
+				"Assets/Scripts/PlayerClassChef.cs"
+			],
+			[
+				"fish",
+				"Assets/Scripts/PlayerClassMermaidFish.cs"
+			],
+			[
+				"mermaid",
+				"Assets/Scripts/PlayerClassMermaid.cs"
+			],
+			[
+				"actor",
+				"Assets/Scripts/Actor.cs"
+			],
+			[
+				"enem",
+				"Assets/Scripts/EnemyBasicController.cs"
+			],
+			[
+				"classmer",
+				"Assets/Scripts/PlayerClassMermaid.cs"
+			],
+			[
+				"playercon",
+				"Assets/Scripts/PlayerController.cs"
+			],
+			[
+				"class",
+				"Assets/Scripts/PlayerClass.cs"
+			],
+			[
+				"classmerm",
+				"Assets/Scripts/PlayerClassMermaid.cs"
+			],
+			[
 				"enemy",
 				"Assets/Scripts/EnemyBasicController.cs"
 			],
@@ -841,14 +881,6 @@
 			],
 			[
 				"mermaidfi",
-				"Assets/Scripts/PlayerClassMermaidFish.cs"
-			],
-			[
-				"mermaid",
-				"Assets/Scripts/PlayerClassMermaid.cs"
-			],
-			[
-				"fish",
 				"Assets/Scripts/PlayerClassMermaidFish.cs"
 			],
 			[
@@ -904,14 +936,6 @@
 				"Assets/Scripts/Timer.cs"
 			],
 			[
-				"playercon",
-				"Assets/Scripts/PlayerController.cs"
-			],
-			[
-				"actor",
-				"Assets/Scripts/Actor.cs"
-			],
-			[
 				"playerch",
 				"Assets/Scripts/PlayerClassChef.cs"
 			],
@@ -926,10 +950,6 @@
 			[
 				"player",
 				"Assets/Scripts/PlayerClass.cs"
-			],
-			[
-				"enem",
-				"Assets/Scripts/EnemyBasicController.cs"
 			],
 			[
 				"chefpri",
@@ -950,10 +970,6 @@
 			[
 				"classche",
 				"Assets/Scripts/Class Scripts/PlayerClassChef.cs"
-			],
-			[
-				"class",
-				"Assets/Scripts/Class Scripts/PlayerClass.cs"
 			],
 			[
 				"fisherman",
@@ -1064,10 +1080,6 @@
 				"Assets/Scripts/PlayerClassChefTertiary.cs"
 			],
 			[
-				"chec",
-				"Assets/Scripts/PlayerClassChefTertiary.cs"
-			],
-			[
 				"entit",
 				"Assets/Scripts/Entities.cs"
 			],
@@ -1142,10 +1154,10 @@
 	},
 	"settings":
 	{
-		"_vintageous_last_buffer_search": "flying",
+		"_vintageous_last_buffer_search": "fishRel",
 		"_vintageous_last_buffer_search_command": "vi_slash",
 		"_vintageous_last_char_search_command": "vi_f",
-		"_vintageous_last_character_search": ")",
+		"_vintageous_last_character_search": "b",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{

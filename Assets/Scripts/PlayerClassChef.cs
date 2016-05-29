@@ -15,11 +15,13 @@ public class PlayerClassChef: PlayerClass {
     public GameObject secondaryProjectile;
     public GameObject tertiaryProjectile;
 
-    const float primaryThrowVelocity = 450f;
+    const float primaryThrowVelocity = 600f;
     const float secondaryDeathTimer = 2.5f;
     const float secondaryThrowVelocity = 200f;
+    const int _classHealthMax = 50;
 
-    public override float PlayerSpeed { get { return 1200f; } }
+    public override int ClassHealthMax { get { return _classHealthMax; } }
+    public override float ClassSpeed { get { return 1600f; } }
     public override Sprite ClassSprite {get { return _baseSprite; }}
     public override Color ClassColor {get { return _baseColor; }}
     public override void CallBaseStart() { BaseStart(); }
@@ -40,7 +42,7 @@ public class PlayerClassChef: PlayerClass {
         secondaryProjectile = entities.chefFireSecondary;
         tertiaryProjectile = entities.chefFireTertiary;
 
-        primaryCooldownAmt = 0.75f;
+        primaryCooldownAmt = 0.5f;
         secondaryCooldownAmt = 2f;
         tertiaryCooldownAmt = 1.5f;
     }
